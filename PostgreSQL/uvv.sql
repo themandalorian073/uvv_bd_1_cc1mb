@@ -1,4 +1,4 @@
-create role amandaarnoni with createdb; 
+create role amandaarnoni with createdb password '1234567'; 
 comment on role amandaarnoni is 'criação de um usuário';
 
 create database uvv with 
@@ -10,7 +10,7 @@ lc_ctype = 'pt_BR.UTF-8'
 allow_connections = true;
 comment on database uvv is 'Criação do banco de dados uvv.';
 
-\c uvv postgres;
+\c uvv amandaarnoni;
 
 create schema elmasri authorization current_role;
 comment on schema elmasri is 'Criação do schema elmasri para o banco de dados uvv com o ascesso do usuário criado.';
