@@ -226,8 +226,3 @@ insert into trabalha_em (cpf_funcionario, numero_projeto, horas)
 values (98765432168, 20, 15.0);
 insert into trabalha_em (cpf_funcionario, numero_projeto, horas)
 values (88866555576, 20, null);
-
-
-
-
-
