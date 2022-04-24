@@ -1,4 +1,4 @@
-create role amandaarnoni with createdb password '1234567'; 
+create role amandaarnoni with createdb superuser login password '1234567' createrole bypassrls; 
 comment on role amandaarnoni is 'criação de um usuário';
 
 create database uvv with 
