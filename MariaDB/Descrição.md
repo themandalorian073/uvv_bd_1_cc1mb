@@ -6,4 +6,3 @@ Aqui se encontra o script da implementação do modelo de banco de dados Elmasri
 
 
 
-You are right. MySQL is very limited when it comes to comments on "objects" in the database.
