@@ -24,24 +24,22 @@ where sexo = 'M';
 
 -- Questão 3 --
 
-select concat (primeiro_nome, '', nome_meio, '', ultimo_nome, '', data_nascimento, '', year(from_days(datediff(current_date,funcionario.data_nascimento))), '', 'anos de idade', '', 'salário de', '', salario, '', 'reais')
-as departamento_pesquisa
+select concat_ws('-', primeiro_nome, nome_meio, ultimo_nome, data_nascimento, year(from_days(datediff(current_date,funcionario.data_nascimento))), 'anos de idadee salário de', salario, 'reais') 
+as departamento_pesquisa 
 from funcionario
 where numero_departamento = 5;
 
-select concat (primeiro_nome, '', nome_meio, '', ultimo_nome, '', data_nascimento, '', year(from_days(datediff(current_date,funcionario.data_nascimento))), '', 'anos de idade', '', 'salário de', '', salario, '', 'reais')
+select concat_ws('-', primeiro_nome, nome_meio, ultimo_nome, data_nascimento, year(from_days(datediff(current_date,funcionario.data_nascimento))), 'anos de idadee salário de', salario, 'reais') 
 as departamento_administracao
 from funcionario
 where numero_departamento = 4;
 
-select concat (primeiro_nome, '', nome_meio, '', ultimo_nome, '', data_nascimento, '', year(from_days(datediff(current_date,funcionario.data_nascimento))), '', 'anos de idade', '', 'salário de', '', salario, '', 'reais')
+select concat_ws('-', primeiro_nome, nome_meio, ultimo_nome, data_nascimento, year(from_days(datediff(current_date,funcionario.data_nascimento))), 'anos de idadee salário de', salario, 'reais') 
 as departamento_matriz
 from funcionario
 where numero_departamento = 1;
 
 -- Questão 4 --
-
-
 
 -- Questão 5 --
 
