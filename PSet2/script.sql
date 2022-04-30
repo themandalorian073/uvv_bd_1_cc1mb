@@ -41,6 +41,11 @@ where numero_departamento = 1;
 
 -- Questão 4 --
 
+select primeiro_nome, nome_meio, ultimo_nome, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade, salario as salario_atual
+from funcionario;
+
+--fazer assim na questão 3 --
+
 -- Questão 5 --
 
 
