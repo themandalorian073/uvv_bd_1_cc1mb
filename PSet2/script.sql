@@ -42,8 +42,7 @@ where numero_departamento = 1;
 -- Questão 4 --
 
 select primeiro_nome, nome_meio, ultimo_nome, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade, salario as salario_atual, salario * 1.20 as salario_20, salario * 1.15 as salario_15
-from funcionario
-where salario_20 < 35000 and salario_15 >= 35000;
+from funcionario where salario * 1.20 < 35000 and salario * 1.15 >= 35000;
 
 -- Questão 5 --
 
