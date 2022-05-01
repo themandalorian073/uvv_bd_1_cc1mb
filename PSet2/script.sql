@@ -45,7 +45,6 @@ select primeiro_nome, nome_meio, ultimo_nome, year(from_days(datediff(current_da
 from funcionario
 where salario_20 < 35000 and salario_15 >= 35000;
 
-
 -- Questão 5 --
 
 
