@@ -102,11 +102,11 @@ values ('André', 'V', 'Pereira', 98798798733, '1969-03-29', 'R.Timbira, 35, SP,
 insert into funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, numero_departamento)
 values ('Jorge', 'E', 'Brito', 88866555576, '1937-11-10', 'R.doHorto, 35, SP, SP', 'M', 55000, 1);
 
-insert into departamento (nome_departamento, numero_departamento, cpf_funcionario, data_inicio_gerente)
+insert into departamento (nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente)
 values ('Pesquisa', 5, 33344555587, '1988-05-22');
-insert into departamento (nome_departamento, numero_departamento, cpf_funcionario, data_inicio_gerente)
+insert into departamento (nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente)
 values ('Administração', 4, 98765432168, '1995-01-01');
-insert into departamento (nome_departamento, numero_departamento, cpf_funcionario, data_inicio_gerente)
+insert into departamento (nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente)
 values ('Matriz', 1, 88866555576, '1981-06-19');
 
 insert into localizacoes_departamento (numero_departamento, local)
