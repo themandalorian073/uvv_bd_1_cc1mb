@@ -45,11 +45,11 @@ add constraint check (sexo in ('M', 'F'));
 
 create table departamento (
 numero_departamento integer not null unique comment 'Número do departamento. PK desta tabela.',
-cpf_funcionario char(11) not null unique comment 'CPF do funcionário e é PK desta tabela. Se refere à cpf que é PK da tabela funcionario e vira PFK.',
+cpf_gerente char(11) not null unique comment 'CPF do funcionário e é PK desta tabela. Se refere à cpf que é PK da tabela funcionario e vira PFK.',
 nome_departamento varchar(15) not null  unique comment 'Nome do departamento. Deve ser único.',
 data_inicio_gerente date comment 'Data do início do gerente no departamento.',
 primary key (numero_departamento),
-foreign key (cpf_funcionario) references funcionario(cpf)
+foreign key (cpf_gerente) references funcionario(cpf)
 ) comment = 'Tabela que armazena as informaçoẽs dos departamentos.';
 
 create table localizacoes_departamento (
