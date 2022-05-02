@@ -69,11 +69,11 @@ comment on constraint con3 on dependente is 'Sexo só pode ser inserido como M o
 
 create table departamento (
 numero_departamento integer not null unique,
-cpf_funcionario char(11) not null unique,
+cpf_gerente char(11) not null unique,
 nome_departamento varchar(15) not null  unique,
 data_inicio_gerente date,
 primary key (numero_departamento),
-constraint fk_departamento foreign key (cpf_funcionario) references funcionario (cpf)
+constraint fk_departamento foreign key (cpf_gerente) references funcionario (cpf)
 );
 comment on table elmasri.departamento is 'Tabela que armazena as informaçoẽs dos departamentos.';
 comment on column elmasri.departamento.numero_departamento is 'Número do departamento. PK desta tabela.';
@@ -88,7 +88,7 @@ local varchar(15) not null,
 cpf_funcionario char(11),
 primary key (numero_departamento, local),
 constraint fk_localizacoes_departamento1 foreign key (numero_departamento) references departamento (numero_departamento),
-constraint fk_localizacoes_departamento2 foreign key (cpf_funcionario) references departamento (cpf_funcionario)
+constraint fk_localizacoes_departamento2 foreign key (cpf_funcionario) references departamento (cpf_gerente)
 );
 comment on table elmasri.localizacoes_departamento is 'Tabela que armazena as possíveis localizações dos departamentos.';
 comment on column elmasri.localizacoes_departamento.numero_departamento is 'Número do departamento. Faz parta da PK desta tabela e também é uma FK para a tabela departamento.';
@@ -104,7 +104,7 @@ local_projeto varchar(15),
 numero_departamento integer not null,
 cpf_funcionario char(11),
 constraint fk_projeto1 foreign key (numero_departamento) references departamento (numero_departamento),
-constraint fk_projeto2 foreign key (cpf_funcionario) references departamento (cpf_funcionario)
+constraint fk_projeto2 foreign key (cpf_funcionario) references departamento (cpf_gerente)
 );
 comment on table elmasri.projeto is 'Tabela que armazena as informações sobre os projetos dos departamentos.';
 comment on column elmasri.projeto.numero_projeto is 'Número do projeto. PK desta tabela.';
@@ -148,7 +148,7 @@ values ('André', 'V', 'Pereira', 98798798733, '1969-03-29', 'R.Timbira, 35, SP,
 insert into funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, numero_departamento)
 values ('Jorge', 'E', 'Brito', 88866555576, '1937-11-10', 'R.doHorto, 35, SP, SP', 'M', 55000, 1);
 
-insert into departamento (nome_departamento, numero_departamento, cpf_funcionario, data_inicio_gerente)
+insert into departamento (nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente)
 values ('Pesquisa', 5, 33344555587, '1988-05-22');
 insert into departamento (nome_departamento, numero_departamento, cpf_funcionario, data_inicio_gerente)
 values ('Administração', 4, 98765432168, '1995-01-01');
