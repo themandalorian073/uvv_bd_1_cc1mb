@@ -58,7 +58,7 @@ local varchar(15) not null comment 'Localização do departamento. Faz parte da 
 cpf_funcionario char(11) comment 'CPF do funcionário. Uma das PK nesta tabela. Refere-se à cpf que é PK da tabela funcionario.',
 primary key (numero_departamento, local),
 foreign key (numero_departamento) references departamento(numero_departamento),
-foreign key (cpf_funcionario) references departamento(cpf_funcionario)
+foreign key (cpf_funcionario) references departamento(cpf_gerente)
 ) comment = 'Tabela que armazena as possíveis localizações dos departamentos.';
 
 create table projeto (
@@ -69,7 +69,7 @@ numero_departamento integer not null comment 'Número do departamento. FK para a
 cpf_funcionario char(11) comment 'CPF do funcionário que faz referência ào CPF na tabela funcionário. Por isso, se torna uma FK.',
 primary key (numero_projeto),
 foreign key (numero_departamento) references departamento(numero_departamento),
-foreign key (cpf_funcionario) references departamento(cpf_funcionario)
+foreign key (cpf_funcionario) references departamento(cpf_gerente)
 ) comment = 'Tabela que armazena as informações sobre os projetos dos departamentos.';
 
 create table trabalha_em (
