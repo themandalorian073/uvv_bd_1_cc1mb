@@ -87,3 +87,6 @@ where exists (select * from dependente where funcionario.cpf != dependente.cpf_f
 -- Questão 9 --
 
 -- Questão 10 --
+
+-- Questão 11 --
+
