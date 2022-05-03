@@ -70,7 +70,7 @@ select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, numero_de
 from funcionario
 where exists (select * from departamento where funcionario.cpf = departamento.cpf_gerente and funcionario.numero_departamento = 5);
 
-
-select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, salario
-from funcionario
-where exists (select * from departamento where funcionario.cpf = departamento.cpf_gerente and funcionario.numero_departamento = 5);
+-- importante os nomes dos departamentos --
+select nome_departamento
+from departamento
+where exists (select * from funcionario where funcionario.numero_departamento = departamento.numero_departamento);
