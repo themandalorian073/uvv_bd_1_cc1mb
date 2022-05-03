@@ -52,7 +52,6 @@ from funcionario
 where exists (select * from departamento where funcionario.cpf = departamento.cpf_gerente);
 
 -- mostra todos os funcionarios --
-
 select primeiro_nome, nome_meio, ultimo_nome, numero_departamento, salario
 from funcionario;
 
@@ -74,3 +73,17 @@ where exists (select * from departamento where funcionario.cpf = departamento.cp
 select nome_departamento
 from departamento
 where exists (select * from funcionario where funcionario.numero_departamento = departamento.numero_departamento);
+
+-- Questão 6 --
+
+-- Questão 7 --
+-- não falou para colocar nome do departamento --
+
+-- Questão 8 --
+
+select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento as departamento, salario
+from funcionario
+where exists (select * from dependente where funcionario.cpf != dependente.cpf_funcionario);
+
+
+
