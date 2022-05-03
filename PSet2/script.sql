@@ -60,7 +60,7 @@ from funcionario;
 select nome_departamento, numero_departamento
 from departamento;
 
-
-select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, numero_departamento, salario
+-- para mostrar todos os funcionários exceto os que são gerentes --
+select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, salario
 from funcionario
 where exists (select * from departamento where funcionario.cpf != departamento.cpf_gerente);
