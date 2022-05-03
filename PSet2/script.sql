@@ -60,7 +60,17 @@ from funcionario;
 select nome_departamento, numero_departamento
 from departamento;
 
--- para mostrar todos os funcionários exceto os que são gerentes --
+-- para mostrar todos os funcionários exceto os que são gerentes do departamento 5 --
 select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, salario
 from funcionario
-where exists (select * from departamento where funcionario.cpf != departamento.cpf_gerente);
+where exists (select * from departamento where funcionario.cpf != departamento.cpf_gerente and funcionario.numero_departamento = 5);
+
+-- mostra o gerente do departamento 5 --
+select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, numero_departamento, salario
+from funcionario
+where exists (select * from departamento where funcionario.cpf = departamento.cpf_gerente and funcionario.numero_departamento = 5);
+
+
+select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, salario
+from funcionario
+where exists (select * from departamento where funcionario.cpf = departamento.cpf_gerente and funcionario.numero_departamento = 5);
