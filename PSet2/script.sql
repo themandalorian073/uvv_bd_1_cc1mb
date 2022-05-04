@@ -104,6 +104,12 @@ where numero_departamento = 1;
 -- Questão 12 --
 
 -- Questão 13 --
+select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, sexo, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade
+from funcionario
+union
+select nome_dependente, sexo, year(from_days(datediff(current_date,dependente.data_nascimento))) as anos_idade
+from dependente
+order by anos_idade desc;
 
 -- Questão 14 --
 select count(numero_departamento) as funcionarios_dep5
@@ -119,4 +125,3 @@ from funcionario
 where numero_departamento = 1;
 
 -- Questão 15 --
-
