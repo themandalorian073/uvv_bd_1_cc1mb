@@ -29,6 +29,34 @@
 #### PostgreSQL
 
 ```
+drop user if exists abrantes;
+
+create user abrantes with
+ nosuperuser
+ creatdb
+ createrole
+ encrypted password '123456'
+
+drop database if exists uvv;
+
+create database uvv with
+ owner = 'abrantes'
+ template = template0
+ encoding = 'UTF-8'
+ lc_collate = 'pt_BR.UTF-8'
+ lc_ctype = 'pt_BR.UTF-8'
+;
+
+\c 'dbname=uvv user=abrantes password=123456'
+
+create schema elmasri authorization abrantes;
+-- altera nos metadados --
+alter user abrantes 
+set search_path to elmasri, '$user', public;
+
+- ativa a configuração --
+set search_path to elmasri, '$user', public;
+
 create table funcionario (
  cpf                    char(11)         constraint nn_func_cpf           not null,
  primeiro_nome          varchar(15)      constraint nn_func_prim_nome     not null, 
