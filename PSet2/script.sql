@@ -106,6 +106,17 @@ where numero_departamento = 1;
 -- Questão 13 --
 
 -- Questão 14 --
+select count(numero_departamento) as funcionarios_dep5
+from funcionario
+where numero_departamento = 5;
+
+select count(numero_departamento) as funcionarios_dep4
+from funcionario
+where numero_departamento = 4;
+
+select count(numero_departamento) as funcionarios_dep1
+from funcionario
+where numero_departamento = 1;
 
 -- Questão 15 --
 
