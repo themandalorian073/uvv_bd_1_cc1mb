@@ -87,6 +87,25 @@ where exists (select * from dependente where funcionario.cpf != dependente.cpf_f
 -- Questão 9 --
 
 -- Questão 10 --
+select avg(salario) as media_dep_5
+from funcionario
+where numero_departamento = 5;
+
+select avg(salario) as media_dep_4
+from funcionario
+where numero_departamento = 4;
+
+select avg(salario) as media_dep_1
+from funcionario
+where numero_departamento = 1;
 
 -- Questão 11 --
+
+-- Questão 12 --
+
+-- Questão 13 --
+
+-- Questão 14 --
+
+-- Questão 15 --
 
