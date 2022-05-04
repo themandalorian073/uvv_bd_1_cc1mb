@@ -2,7 +2,7 @@
 ### Professor Abrantes Araujo Silva Filho
 #### CC1mB
 ***
-Esta é a descrição geral do que se pode encontrar neste repositório.
+Esta é a descrição geral do que se pode encontrar neste subdiretório.
 
 1. Pasta **My SQL Power Architect**, que contém o modelo de banco de dados Elmasri tanto na sua versão idêntica (com seu devidos erros) quanto na sua versão corrigida;
 
