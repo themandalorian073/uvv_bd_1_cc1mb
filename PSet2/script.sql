@@ -94,6 +94,12 @@ where exists (select * from dependente where funcionario.cpf != dependente.cpf_f
 -- Questão 8 --
 
 -- Questão 9 --
+-- ainda falta terminar!!! --
+select nome_departamento, nome_projeto, sum(horas)
+from departamento
+right join projeto on departamento.numero_departamento = projeto.numero_projeto 
+right join trabalha_em on projeto.numero_projeto = trabalha_em.numero_projeto
+order by nome_projeto asc;
 
 -- Questão 10 --
 select avg(salario) as media_dep_5
