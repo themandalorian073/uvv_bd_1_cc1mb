@@ -75,12 +75,22 @@ from departamento
 where exists (select * from funcionario where funcionario.numero_departamento = departamento.numero_departamento);
 
 -- Questão 6 --
+-- não falou para colocar o nome do departamento --
+
+select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, nome_dependente, year(from_days(datediff(current_date, dependente.data_nascimento))) as anos_idade_dependente, dependente.sexo
+from funcionario
+right join dependente
+on funcionario.cpf = dependente.cpf_funcionario
+order by nome_funcionario asc;
+
+-- select replace ('F', 'F', 'Feminino');   select replace ('M', 'M', 'Masculino'); --
 
 -- Questão 7 --
 -- não falou para colocar nome do departamento --
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento as departamento, salario
 from funcionario
 where exists (select * from dependente where funcionario.cpf != dependente.cpf_funcionario);
+
 
 -- Questão 8 --
 
