@@ -160,5 +160,10 @@ from funcionario
 where numero_departamento = 1;
 
 -- Questão 15 --
+-- ainda falta terminar !!! --
 -- não falou para colocar o nome do departamento --
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, nome_projeto
+from funcionario
+where exists (select * from projeto where funcionario.numero_departamento = projeto.numero_departamento)
+
+-- right join projeto on funcionario.numero_departamento = projeto.numero_departamento; --
