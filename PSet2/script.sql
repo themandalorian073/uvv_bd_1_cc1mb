@@ -76,7 +76,7 @@ where exists (select * from funcionario where funcionario.numero_departamento = 
 
 -- Questão 6 --
 -- não falou para colocar o nome do departamento --
-
+-- ainda falta terminar !!! --
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, nome_dependente, year(from_days(datediff(current_date, dependente.data_nascimento))) as anos_idade_dependente, dependente.sexo
 from funcionario
 right join dependente
@@ -94,7 +94,7 @@ where exists (select * from dependente where funcionario.cpf != dependente.cpf_f
 -- Questão 8 --
 
 -- Questão 9 --
--- ainda falta terminar!!! --
+-- ainda falta terminar !!! --
 select nome_departamento, nome_projeto, sum(horas)
 from departamento
 right join projeto on departamento.numero_departamento = projeto.numero_projeto 
@@ -115,8 +115,28 @@ from funcionario
 where numero_departamento = 1;
 
 -- Questão 11 --
+-- ainda falta terminar!!! --
+select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_projeto, salario
+from funcionario
+right join trabalha_em 
 
 -- Questão 12 --
+-- ainda falta terminar !!! --
+select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_departamento, nome_projeto
+from funcionario 
+right join departamento on departamento.numero_departamento = funcionario.numero_departamento
+right join projeto on projeto.numero_departamento = departamento.numero_departamento
+right join trabalha_em on trabalha_em.horas is null
+order by nome_projeto asc;
+
+-- mostra o funcionario que tem horas null --
+select cpf_funcionario
+from trabalha_em
+where horas is null;
+
+select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario
+from funcionario
+where cpf = 88866555576;
 
 -- Questão 13 --
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, sexo, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade
@@ -140,3 +160,5 @@ from funcionario
 where numero_departamento = 1;
 
 -- Questão 15 --
+-- não falou para colocar o nome do departamento --
+select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, nome_projeto
