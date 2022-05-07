@@ -91,7 +91,6 @@ select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numer
 from funcionario
 where exists (select * from dependente where funcionario.cpf != dependente.cpf_funcionario);
 
-
 -- Questão 8 --
 
 -- Questão 9 --
