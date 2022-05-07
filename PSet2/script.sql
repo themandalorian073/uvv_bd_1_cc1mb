@@ -92,6 +92,14 @@ from funcionario
 where exists (select * from dependente where funcionario.cpf != dependente.cpf_funcionario);
 
 -- Questão 8 --
+-- falta conferir --
+-- não falou para colocar o nome do departamento ou nome dos projetos --
+select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, horas, nome_departamento, nome_projeto
+from funcionario
+right join departamento on funcionario.numero_departamento = departamento.numero_departamento
+right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
+right join projeto on projeto.numero_projeto = trabalha_em.numero_projeto
+order by nome_funcionario asc;
 
 -- Questão 9 --
 -- ainda falta terminar !!! --
