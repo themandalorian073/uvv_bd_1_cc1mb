@@ -137,7 +137,7 @@ select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_p
 from funcionario
 right join trabalha_em 
 
--- Questão 12 --
+-- Questão 12 -- PERGUNTAR --   
 -- ainda falta terminar !!! --
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_departamento, nome_projeto
 from funcionario 
@@ -185,5 +185,5 @@ where numero_departamento = 1;
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, nome_projeto
 from funcionario
 where exists (select * from projeto where funcionario.numero_departamento = projeto.numero_departamento)
-
 -- right join projeto on funcionario.numero_departamento = projeto.numero_departamento; --
+
