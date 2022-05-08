@@ -1,5 +1,6 @@
 -- Questão 1 --
 
+-- tentar ver como fazer isso em uma cláusula SELECT só --
 select avg(salario) as media_dep_5
 from funcionario
 where numero_departamento = 5;
@@ -12,13 +13,13 @@ select avg(salario) as media_dep_1
 from funcionario
 where numero_departamento = 1;
 
--- Questão 2 --
+-- Questão 2 -- OK --
 
-select avg(salario) as media_mulheres
+select avg(salario) as media_salarial_mulheres
 from funcionario
 where sexo = 'F';
 
-select avg(salario) as media_homens
+select avg(salario) as media_salarial_homens
 from funcionario
 where sexo = 'M';
 
