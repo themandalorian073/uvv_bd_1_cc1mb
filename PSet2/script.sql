@@ -131,7 +131,7 @@ select avg(salario) as media_dep_1
 from funcionario
 where numero_departamento = 1;
 
--- Questão 11 --
+-- Questão 11 -- PESQUISAR --
 -- ainda falta terminar!!! --
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_projeto, salario
 from funcionario
