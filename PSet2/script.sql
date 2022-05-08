@@ -25,6 +25,7 @@ where sexo = 'M';
 
 -- Questão 3 --
 
+-- tentar ver como fazer isso em uma cláusula SELECT só --
 select concat_ws('-', primeiro_nome, nome_meio, ultimo_nome, data_nascimento, year(from_days(datediff(current_date,funcionario.data_nascimento))), 'anos de idadee salário de', salario, 'reais') 
 as departamento_pesquisa 
 from funcionario
@@ -40,9 +41,9 @@ as departamento_matriz
 from funcionario
 where numero_departamento = 1;
 
--- Questão 4 --
+-- Questão 4 -- OK --
 
-select primeiro_nome, nome_meio, ultimo_nome, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade, salario as salario_atual, salario * 1.20 as salario_20, salario * 1.15 as salario_15
+select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade, salario as salario_atual, salario * 1.20 as salario_20, salario * 1.15 as salario_15
 from funcionario where salario * 1.20 < 35000 or salario * 1.15 >= 35000;
 
 -- Questão 5 --
