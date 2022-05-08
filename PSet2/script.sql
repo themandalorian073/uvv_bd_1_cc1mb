@@ -47,6 +47,7 @@ select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, year(
 from funcionario where salario * 1.20 < 35000 or salario * 1.15 >= 35000;
 
 -- Questão 5 --
+-- ainda falta terminar !!! --
 
 -- mostra todos os gerentes de cada departamento --
 select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, numero_departamento, salario
