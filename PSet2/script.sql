@@ -114,6 +114,8 @@ right join trabalha_em on projeto.numero_projeto = trabalha_em.numero_projeto
 order by nome_projeto asc;
 
 -- Questão 10 --
+
+-- tentar ver como fazer isso em uma cláusula SELECT só --
 select avg(salario) as media_dep_5
 from funcionario
 where numero_departamento = 5;
@@ -150,7 +152,8 @@ select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario
 from funcionario
 where cpf = 88866555576;
 
--- Questão 13 --
+-- Questão 13 -- OK --
+-- ordem decrescente das idades (funcionários e dependentes) --
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, sexo, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade
 from funcionario
 union
@@ -159,6 +162,8 @@ from dependente
 order by anos_idade desc;
 
 -- Questão 14 --
+
+-- tentar ver como fazer isso em uma cláusula SELECT só --
 select count(numero_departamento) as funcionarios_dep5
 from funcionario
 where numero_departamento = 5;
