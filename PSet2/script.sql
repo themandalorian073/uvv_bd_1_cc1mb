@@ -90,13 +90,13 @@ order by nome_funcionario asc;
 -- SELECT CASE sexo WHEN 'F' THEN 'FEMININO' WHEN 'M' THEN 'MASCULINO' END FROM funcionario; --
 -- select replace ('F', 'F', 'Feminino');   select replace ('M', 'M', 'Masculino'); --
 
--- Questão 7 --
+-- Questão 7 -- OK --
 -- não falou para colocar nome do departamento --
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento as departamento, salario
 from funcionario
 where exists (select * from dependente where funcionario.cpf != dependente.cpf_funcionario);
 
--- Questão 8 --
+-- Questão 8 -- OK --
 -- falta conferir !!! --
 -- não falou para colocar o nome do departamento ou nome dos projetos --
 select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, horas, nome_departamento, nome_projeto
@@ -106,13 +106,15 @@ right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
 right join projeto on projeto.numero_projeto = trabalha_em.numero_projeto
 order by nome_funcionario asc;
 
--- Questão 9 --
+-- Questão 9 -- PERGUNTAR --
 -- ainda falta terminar !!! --
+
 select nome_departamento, nome_projeto, sum(horas)
 from departamento
 right join projeto on departamento.numero_departamento = projeto.numero_projeto 
 right join trabalha_em on projeto.numero_projeto = trabalha_em.numero_projeto
 order by nome_projeto asc;
+-- está concatenando os dados no retorno -- 
 
 -- Questão 10 -- PERGUNTAR --
 
