@@ -92,7 +92,7 @@ from funcionario
 where exists (select * from dependente where funcionario.cpf != dependente.cpf_funcionario);
 
 -- Questão 8 --
--- falta conferir --
+-- falta conferir !!! --
 -- não falou para colocar o nome do departamento ou nome dos projetos --
 select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, horas, nome_departamento, nome_projeto
 from funcionario
