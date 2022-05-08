@@ -83,6 +83,7 @@ right join dependente
 on funcionario.cpf = dependente.cpf_funcionario
 order by nome_funcionario asc;
 
+-- SELECT CASE sexo WHEN 'F' THEN 'FEMININO' WHEN 'M' THEN 'MASCULINO' END FROM funcionario; --
 -- select replace ('F', 'F', 'Feminino');   select replace ('M', 'M', 'Masculino'); --
 
 -- Questão 7 --
