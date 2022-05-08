@@ -1,6 +1,5 @@
 -- Questão 1 --
 
--- tentar ver como fazer isso em uma cláusula SELECT só --
 select avg(salario) as media_dep_5
 from funcionario
 where numero_departamento = 5;
@@ -12,6 +11,8 @@ where numero_departamento = 4;
 select avg(salario) as media_dep_1
 from funcionario
 where numero_departamento = 1;
+
+-- tentar ver como fazer isso em uma cláusula SELECT só --
 
 -- Questão 2 -- OK --
 
