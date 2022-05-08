@@ -1,4 +1,4 @@
--- Questão 1 --
+-- Questão 1 -- PERGUNTAR --
 
 select avg(salario) as media_dep_5
 from funcionario
@@ -24,7 +24,7 @@ select avg(salario) as media_salarial_homens
 from funcionario
 where sexo = 'M';
 
--- Questão 3 --
+-- Questão 3 -- PERGUNTAR --
 
 -- tentar ver como fazer isso em uma cláusula SELECT só --
 select concat_ws('-', primeiro_nome, nome_meio, ultimo_nome, data_nascimento, year(from_days(datediff(current_date,funcionario.data_nascimento))), 'anos de idadee salário de', salario, 'reais') 
@@ -47,7 +47,7 @@ where numero_departamento = 1;
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade, salario as salario_atual, salario * 1.20 as salario_20, salario * 1.15 as salario_15
 from funcionario where salario * 1.20 < 35000 or salario * 1.15 >= 35000;
 
--- Questão 5 --
+-- Questão 5 -- 
 -- ainda falta terminar !!! --
 
 -- mostra todos os gerentes de cada departamento --
@@ -78,7 +78,7 @@ select nome_departamento
 from departamento
 where exists (select * from funcionario where funcionario.numero_departamento = departamento.numero_departamento);
 
--- Questão 6 --
+-- Questão 6 -- PERGUNTAR --
 -- não falou para colocar o nome do departamento --
 -- ainda falta terminar !!! --
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, nome_dependente, year(from_days(datediff(current_date, dependente.data_nascimento))) as anos_idade_dependente, dependente.sexo
@@ -114,7 +114,7 @@ right join projeto on departamento.numero_departamento = projeto.numero_projeto
 right join trabalha_em on projeto.numero_projeto = trabalha_em.numero_projeto
 order by nome_projeto asc;
 
--- Questão 10 --
+-- Questão 10 -- PERGUNTAR --
 
 -- tentar ver como fazer isso em uma cláusula SELECT só --
 select avg(salario) as media_dep_5
@@ -162,7 +162,7 @@ select nome_dependente, sexo, year(from_days(datediff(current_date,dependente.da
 from dependente
 order by anos_idade desc;
 
--- Questão 14 --
+-- Questão 14 -- PERGUNTAR --
 
 -- tentar ver como fazer isso em uma cláusula SELECT só --
 select count(numero_departamento) as funcionarios_dep5
