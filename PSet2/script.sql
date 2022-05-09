@@ -138,11 +138,12 @@ right join funcionario
 on funcionario.cpf = trabalha_em.cpf_funcionario 
 group by numero_departamento;
 
--- Questão 15 --
--- ainda falta terminar !!! --
+-- Questão 15 -- CONFERIR
 -- não pediu para exibir o nome do departamento --
-select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, nome_projeto
-from funcionario
-where exists (select * from projeto where funcionario.numero_departamento = projeto.numero_departamento)
--- right join projeto on funcionario.numero_departamento = projeto.numero_departamento; --
 
+select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_departamento, nome_projeto
+from funcionario 
+right join departamento on funcionario.numero_departamento = departamento.numero_departamento
+right join projeto on funcionario.numero_departamento = projeto.numero_departamento
+right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
+order by nome_projeto asc;
