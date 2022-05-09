@@ -35,6 +35,9 @@ right join departamento
 on funcionario.numero_departamento = departamento.numero_departamento;
 where exists (select nome_gerente from funcionario where funcionario.cpf = departamento.cpf_gerente);
 
+-- tentar fazer uma UNION dividindo as informações para ver se funciona --
+
+
 -- Questão 6 -- OK
 -- não falou para exibir o nome do departamento --
 
