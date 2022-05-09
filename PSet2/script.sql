@@ -29,33 +29,7 @@ from funcionario where salario * 1.20 < 35000 or salario * 1.15 >= 35000;
 -- Questão 5 -- 
 -- ainda falta terminar !!! --
 
--- mostra todos os gerentes de cada departamento --
-select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, numero_departamento, salario
-from funcionario
-where exists (select * from departamento where funcionario.cpf = departamento.cpf_gerente);
 
--- mostra todos os funcionarios --
-select primeiro_nome, nome_meio, ultimo_nome, numero_departamento, salario
-from funcionario;
-
--- mostra os nomes dos departamentos e seus respectivos números --
-select nome_departamento, numero_departamento
-from departamento;
-
--- para mostrar todos os funcionários exceto os que são gerentes do departamento 5 --
-select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, salario
-from funcionario
-where exists (select * from departamento where funcionario.cpf != departamento.cpf_gerente and funcionario.numero_departamento = 5);
-
--- mostra o gerente do departamento 5 --
-select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, numero_departamento, salario
-from funcionario
-where exists (select * from departamento where funcionario.cpf = departamento.cpf_gerente and funcionario.numero_departamento = 5);
-
--- importante os nomes dos departamentos --
-select nome_departamento
-from departamento
-where exists (select * from funcionario where funcionario.numero_departamento = departamento.numero_departamento);
 
 -- Questão 6 -- OK
 -- não falou para exibir o nome do departamento --
@@ -147,3 +121,4 @@ right join departamento on funcionario.numero_departamento = departamento.numero
 right join projeto on funcionario.numero_departamento = projeto.numero_departamento
 right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
 order by nome_projeto asc;
+
