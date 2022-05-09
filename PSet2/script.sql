@@ -44,6 +44,13 @@ select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nume
 from funcionario
 where exists (select * from departamento where funcionario.cpf != departamento.cpf_gerente);
 
+-- tentando fazer duas JOINS --
+select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario
+from funcionario 
+join funcionario as nome_gerente on departamento.cpf_gerente = funcionario.cpf
+join funcionario as nome_funcionario on departamento.cpf_gerente != funcionario.cpf;
+
+
 
 -- Questão 6 -- OK
 -- não falou para exibir o nome do departamento --
