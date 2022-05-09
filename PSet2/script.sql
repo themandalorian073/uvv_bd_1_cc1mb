@@ -76,9 +76,9 @@ select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numer
 from funcionario
 where exists (select * from dependente where funcionario.cpf != dependente.cpf_funcionario);
 
--- Questão 8 --
--- falta conferir !!! --
--- não falou para colocar o nome do departamento ou nome dos projetos --
+-- Questão 8 -- OK
+-- não falou para exibir o nome do departamento ou nome dos projetos --
+
 select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, horas, nome_departamento, nome_projeto
 from funcionario
 right join departamento on funcionario.numero_departamento = departamento.numero_departamento
@@ -86,15 +86,14 @@ right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
 right join projeto on projeto.numero_projeto = trabalha_em.numero_projeto
 order by nome_funcionario asc;
 
--- Questão 9 -- PERGUNTAR --
--- ainda falta terminar !!! --
+-- Questão 9 -- OK
 
-select nome_departamento, nome_projeto, sum(horas)
-from departamento
-right join projeto on departamento.numero_departamento = projeto.numero_projeto 
+select nome_departamento, nome_projeto, sum(horas) as total_horas_trabalhadas
+from projeto
+right join departamento on projeto.numero_departamento = departamento.numero_departamento 
 right join trabalha_em on projeto.numero_projeto = trabalha_em.numero_projeto
+group by nome_departamento, nome_projeto
 order by nome_projeto asc;
--- está concatenando os dados no retorno -- 
 
 -- Questão 10 -- OK
 -- não pediu para colocaexibirr no formato da moeda real --
