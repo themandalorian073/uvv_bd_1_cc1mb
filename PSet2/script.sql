@@ -13,7 +13,7 @@ from funcionario
 group by sexo;
 
 -- Questão 3 -- OK 
--- não pediu para colocar o número do departamento --
+-- não pediu para exibir o número do departamento --
 
 select nome_departamento, concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, data_nascimento, year(from_days(datediff(current_date, funcionario.data_nascimento))) as anos_idade,  format(salario, 'c', 'pt-br') as salario
 from funcionario
@@ -27,9 +27,13 @@ select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, year(
 from funcionario where salario * 1.20 < 35000 or salario * 1.15 >= 35000;
 
 -- Questão 5 -- 
--- ainda falta terminar !!! --
+-- não pediu para exibir o nome do departamento --
 
-
+select nome_departamento, concat(primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario
+from funcionario
+right join departamento
+on funcionario.numero_departamento = departamento.numero_departamento;
+where exists (select nome_gerente from funcionario where funcionario.cpf = departamento.cpf_gerente);
 
 -- Questão 6 -- OK
 -- não falou para exibir o nome do departamento --
