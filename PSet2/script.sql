@@ -57,10 +57,10 @@ select nome_departamento
 from departamento
 where exists (select * from funcionario where funcionario.numero_departamento = departamento.numero_departamento);
 
--- Questão 6 -- PERGUNTAR --
--- não falou para colocar o nome do departamento --
--- ainda falta terminar !!! --
-select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, nome_dependente, year(from_days(datediff(current_date, dependente.data_nascimento))) as anos_idade_dependente, dependente.sexo
+-- Questão 6 -- OK
+-- não falou para exibir o nome do departamento --
+
+select case dependente.sexo when 'F' then 'Feminino' when 'M' then 'Masculino' end as sexo_dependente, nome_dependente, year(from_days(datediff(current_date, dependente.data_nascimento))) as anos_idade_dependente, concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento
 from funcionario
 right join dependente
 on funcionario.cpf = dependente.cpf_funcionario
