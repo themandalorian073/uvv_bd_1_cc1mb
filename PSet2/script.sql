@@ -111,12 +111,23 @@ from funcionario
 right join trabalha_em 
 
 -- Questão 12 -- PERGUNTAR --   
--- ainda falta terminar !!! --
+
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_departamento, nome_projeto
 from funcionario 
-right join departamento on departamento.numero_departamento = funcionario.numero_departamento
-right join projeto on projeto.numero_departamento = departamento.numero_departamento
-right join trabalha_em on trabalha_em.horas is null
+right join departamento on funcionario.numero_departamento = departamento.numero_departamento
+right join projeto on funcionario.numero_departamento = projeto.numero_departamento
+right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
+where trabalha_em.horas is null
+order by nome_projeto asc;
+
+----------------------------------------------------------------------------------------------------------------
+
+select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_departamento, nome_projeto
+from funcionario 
+right join departamento on funcionario.numero_departamento = departamento.numero_departamento
+right join projeto on funcionario.numero_departamento = projeto.numero_departamento
+right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
+where trabalha_em.horas is null
 order by nome_projeto asc;
 
 -- mostra o funcionario que tem horas null --
