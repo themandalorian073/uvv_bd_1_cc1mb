@@ -101,11 +101,15 @@ right join departamento
 on funcionario.numero_departamento = departamento.numero_departamento
 group by nome_departamento;
 
--- Questão 11 -- PESQUISAR --
+-- Questão 11 --
 -- ainda falta terminar!!! --
-select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_projeto, salario
+
+select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_projeto, salario, horas
 from funcionario
-right join trabalha_em 
+right join trabalha_em
+on funcionario.cpf = trabalha_em.cpf_funcionario
+right join projeto 
+on funcionario.numero_departamento = projeto.numero_departamento;
 
 -- Questão 12 -- OK   
 -- exibi horas para que pudesse identificar funcionários sem nenhuma hora trabalhada --
