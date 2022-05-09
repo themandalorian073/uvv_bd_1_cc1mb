@@ -36,6 +36,13 @@ on funcionario.numero_departamento = departamento.numero_departamento;
 where exists (select nome_gerente from funcionario where funcionario.cpf = departamento.cpf_gerente);
 
 -- tentar fazer uma UNION dividindo as informações para ver se funciona --
+select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, numero_departamento
+from funcionario
+where exists (select * from departamento where funcionario.cpf = departamento.cpf_gerente)
+union
+select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento
+from funcionario
+where exists (select * from departamento where funcionario.cpf != departamento.cpf_gerente);
 
 
 -- Questão 6 -- OK
