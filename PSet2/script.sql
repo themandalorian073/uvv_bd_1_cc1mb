@@ -110,34 +110,15 @@ select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_p
 from funcionario
 right join trabalha_em 
 
--- Questão 12 -- PERGUNTAR --   
+-- Questão 12 -- OK   
+-- exibi horas para que pudesse identificar funcionários sem nenhuma hora trabalhada --
 
-select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_departamento, nome_projeto
+select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_departamento, nome_projeto, horas
 from funcionario 
 right join departamento on funcionario.numero_departamento = departamento.numero_departamento
 right join projeto on funcionario.numero_departamento = projeto.numero_departamento
 right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
-where trabalha_em.horas is null
 order by nome_projeto asc;
-
-----------------------------------------------------------------------------------------------------------------
-
-select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_departamento, nome_projeto
-from funcionario 
-right join departamento on funcionario.numero_departamento = departamento.numero_departamento
-right join projeto on funcionario.numero_departamento = projeto.numero_departamento
-right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
-where trabalha_em.horas is null
-order by nome_projeto asc;
-
--- mostra o funcionario que tem horas null --
-select cpf_funcionario
-from trabalha_em
-where horas is null;
-
-select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario
-from funcionario
-where cpf = 88866555576;
 
 -- Questão 13 -- OK 
 -- ordem decrescente das idades (funcionários e dependentes) --
