@@ -1,48 +1,27 @@
--- Questão 1 -- PERGUNTAR --
+-- Questão 1 -- OK 
+-- não falou para colocar nome do departamento --
 
-select avg(salario) as media_dep_5
+select numero_departamento, avg(salario)
 from funcionario
-where numero_departamento = 5;
+group by numero_departamento;
 
-select avg(salario) as media_dep_4
+-- Questão 2 -- OK
+-- não pediu para colocaexibirr no formato da moeda real --
+
+select sexo, avg(salario) as media_salarial
 from funcionario
-where numero_departamento = 4;
+group by sexo;
 
-select avg(salario) as media_dep_1
+-- Questão 3 -- OK 
+-- não pediu para colocar o número do departamento --
+
+select nome_departamento, concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, data_nascimento, year(from_days(datediff(current_date, funcionario.data_nascimento))) as anos_idade,  format(salario, 'c', 'pt-br') as salario
 from funcionario
-where numero_departamento = 1;
+right join departamento
+on funcionario.numero_departamento = departamento.numero_departamento
+group by nome_departamento, data_nascimento;
 
--- tentar ver como fazer isso em uma cláusula SELECT só --
-
--- Questão 2 -- OK --
-
-select avg(salario) as media_salarial_mulheres
-from funcionario
-where sexo = 'F';
-
-select avg(salario) as media_salarial_homens
-from funcionario
-where sexo = 'M';
-
--- Questão 3 -- PERGUNTAR --
-
--- tentar ver como fazer isso em uma cláusula SELECT só --
-select concat_ws('-', primeiro_nome, nome_meio, ultimo_nome, data_nascimento, year(from_days(datediff(current_date,funcionario.data_nascimento))), 'anos de idadee salário de', salario, 'reais') 
-as departamento_pesquisa 
-from funcionario
-where numero_departamento = 5;
-
-select concat_ws('-', primeiro_nome, nome_meio, ultimo_nome, data_nascimento, year(from_days(datediff(current_date,funcionario.data_nascimento))), 'anos de idadee salário de', salario, 'reais') 
-as departamento_administracao
-from funcionario
-where numero_departamento = 4;
-
-select concat_ws('-', primeiro_nome, nome_meio, ultimo_nome, data_nascimento, year(from_days(datediff(current_date,funcionario.data_nascimento))), 'anos de idadee salário de', salario, 'reais') 
-as departamento_matriz
-from funcionario
-where numero_departamento = 1;
-
--- Questão 4 -- OK --
+-- Questão 4 -- OK 
 
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade, salario as salario_atual, salario * 1.20 as salario_20, salario * 1.15 as salario_15
 from funcionario where salario * 1.20 < 35000 or salario * 1.15 >= 35000;
@@ -92,11 +71,12 @@ order by nome_funcionario asc;
 
 -- Questão 7 -- OK --
 -- não falou para colocar nome do departamento --
+
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento as departamento, salario
 from funcionario
 where exists (select * from dependente where funcionario.cpf != dependente.cpf_funcionario);
 
--- Questão 8 -- OK --
+-- Questão 8 --
 -- falta conferir !!! --
 -- não falou para colocar o nome do departamento ou nome dos projetos --
 select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, horas, nome_departamento, nome_projeto
@@ -116,20 +96,14 @@ right join trabalha_em on projeto.numero_projeto = trabalha_em.numero_projeto
 order by nome_projeto asc;
 -- está concatenando os dados no retorno -- 
 
--- Questão 10 -- PERGUNTAR --
+-- Questão 10 -- OK
+-- não pediu para colocaexibirr no formato da moeda real --
 
--- tentar ver como fazer isso em uma cláusula SELECT só --
-select avg(salario) as media_dep_5
-from funcionario
-where numero_departamento = 5;
-
-select avg(salario) as media_dep_4
-from funcionario
-where numero_departamento = 4;
-
-select avg(salario) as media_dep_1
-from funcionario
-where numero_departamento = 1;
+select nome_departamento, avg(salario) as salario
+from funcionario 
+right join departamento 
+on funcionario.numero_departamento = departamento.numero_departamento
+group by nome_departamento;
 
 -- Questão 11 -- PESQUISAR --
 -- ainda falta terminar!!! --
@@ -155,7 +129,7 @@ select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario
 from funcionario
 where cpf = 88866555576;
 
--- Questão 13 -- OK --
+-- Questão 13 -- OK 
 -- ordem decrescente das idades (funcionários e dependentes) --
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, sexo, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade
 from funcionario
@@ -164,24 +138,17 @@ select nome_dependente, sexo, year(from_days(datediff(current_date,dependente.da
 from dependente
 order by anos_idade desc;
 
--- Questão 14 -- PERGUNTAR --
-
--- tentar ver como fazer isso em uma cláusula SELECT só --
-select count(numero_departamento) as funcionarios_dep5
-from funcionario
-where numero_departamento = 5;
-
-select count(numero_departamento) as funcionarios_dep4
-from funcionario
-where numero_departamento = 4;
-
-select count(numero_departamento) as funcionarios_dep1
-from funcionario
-where numero_departamento = 1;
+-- Questão 14 -- OK
+-- não pediu para exibir o nome do departamento --
+select numero_departamento, count(cpf_funcionario) as qtd_funcionarios
+from trabalha_em
+right join funcionario
+on funcionario.cpf = trabalha_em.cpf_funcionario 
+group by numero_departamento;
 
 -- Questão 15 --
 -- ainda falta terminar !!! --
--- não falou para colocar o nome do departamento --
+-- não pediu para exibir o nome do departamento --
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento, nome_projeto
 from funcionario
 where exists (select * from projeto where funcionario.numero_departamento = projeto.numero_departamento)

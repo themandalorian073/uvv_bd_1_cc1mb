@@ -44,8 +44,8 @@ alter table dependente
 add constraint check (sexo in ('M', 'F'));
 
 create table departamento (
-numero_departamento integer not null unique comment 'Número do departamento. PK desta tabela.',
-cpf_gerente char(11) not null unique comment 'CPF do funcionário e é PK desta tabela. Se refere à cpf que é PK da tabela funcionario e vira PFK.',
+numero_departamento integer not null comment 'Número do departamento. PK desta tabela.',
+cpf_gerente char(11) not null comment 'CPF do gerente.',
 nome_departamento varchar(15) not null  unique comment 'Nome do departamento. Deve ser único.',
 data_inicio_gerente date comment 'Data do início do gerente no departamento.',
 primary key (numero_departamento),
