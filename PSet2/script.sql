@@ -26,10 +26,14 @@ group by nome_departamento, data_nascimento;
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade, salario as salario_atual, salario * 1.20 as salario_20, salario * 1.15 as salario_15
 from funcionario where salario * 1.20 < 35000 or salario * 1.15 >= 35000;
 
--- Questão 5 -- TERMINAR
+-- Questão 5 -- CONFERIR
 -- não pediu para exibir o nome do departamento --
 
-
+select concat (func.primeiro_nome, func.nome_meio, func.ultimo_nome) as nome_supervisor, concat (f.primeiro_nome, f.nome_meio, f.ultimo_nome) as nome_funcionario, nome_departamento
+from funcionario as f
+JOIN departamento as dept ON f.numero_departamento = dept.numero_departamento
+join funcionario as func on dept.cpf_gerente = func.cpf
+group by nome_departamento, nome_funcionario, nome_supervisor;
 
 -- Questão 6 -- OK
 -- não falou para exibir o nome do departamento --
@@ -75,7 +79,7 @@ right join departamento
 on funcionario.numero_departamento = departamento.numero_departamento
 group by nome_departamento;
 
--- Questão 11 -- CONFERIR
+-- Questão 11 -- OK
 
 select concat(funcionario.primeiro_nome, funcionario.nome_meio, funcionario.ultimo_nome) as nome_funcionario, projeto.nome_projeto, case when trabalha_em.horas > 0 then trabalha_em.horas * 50 end as valor_total_salario
 from trabalha_em
