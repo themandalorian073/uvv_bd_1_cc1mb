@@ -115,7 +115,7 @@ right join funcionario
 on funcionario.cpf = trabalha_em.cpf_funcionario 
 group by numero_departamento;
 
--- Questão 15 -- 
+-- Questão 15 -- OK
 -- não pediu para exibir o nome do departamento --
 
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, nome_departamento, nome_projeto
