@@ -77,7 +77,7 @@ group by nome_departamento;
 
 -- Questão 11 -- CONFERIR
 
-select concat(funcionario.primeiro_nome, funcionario.nome_meio, funcionario.ultimo_nome) as nome_funcionario, projeto.nome_projeto, case when trabalha_em.horas > 0 then trabalha_em.horas * 50 end as valor_total
+select concat(funcionario.primeiro_nome, funcionario.nome_meio, funcionario.ultimo_nome) as nome_funcionario, projeto.nome_projeto, case when trabalha_em.horas > 0 then trabalha_em.horas * 50 end as valor_total_salario
 from trabalha_em
 join projeto on (trabalha_em.numero_projeto = projeto.numero_projeto)
 join funcionario on (trabalha_em.cpf_funcionario = funcionario.cpf)
