@@ -26,29 +26,8 @@ group by nome_departamento, data_nascimento;
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade, salario as salario_atual, salario * 1.20 as salario_20, salario * 1.15 as salario_15
 from funcionario where salario * 1.20 < 35000 or salario * 1.15 >= 35000;
 
--- Questão 5 -- 
+-- Questão 5 -- TERMINAR
 -- não pediu para exibir o nome do departamento --
-
-select nome_departamento, concat(primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario
-from funcionario
-right join departamento
-on funcionario.numero_departamento = departamento.numero_departamento;
-where exists (select nome_gerente from funcionario where funcionario.cpf = departamento.cpf_gerente);
-
--- tentar fazer uma UNION dividindo as informações para ver se funciona --
-select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, numero_departamento
-from funcionario
-where exists (select * from departamento where funcionario.cpf = departamento.cpf_gerente)
-union
-select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento
-from funcionario
-where exists (select * from departamento where funcionario.cpf != departamento.cpf_gerente);
-
--- tentando fazer duas JOINS --
-select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_gerente, concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario
-from funcionario 
-join funcionario as nome_gerente on departamento.cpf_gerente = funcionario.cpf
-join funcionario as nome_funcionario on departamento.cpf_gerente != funcionario.cpf;
 
 
 
