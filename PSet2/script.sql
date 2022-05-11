@@ -1,12 +1,12 @@
 -- Questão 1 -- OK 
--- não falou para colocar nome do departamento --
+-- não pediu para exibir nome do departamento --
 
 select numero_departamento, avg(salario)
 from funcionario
 group by numero_departamento;
 
 -- Questão 2 -- OK
--- não pediu para colocaexibirr no formato da moeda real --
+-- não pediu para exibir no formato da moeda real --
 
 select sexo, avg(salario) as media_salarial
 from funcionario
@@ -37,7 +37,7 @@ group by nome_departamento, nome_funcionario, nome_supervisor, salario_funcionar
 order by nome_departamento asc, salario_funcionarios desc;
 
 -- Questão 6 -- OK
--- não falou para exibir o nome do departamento --
+-- não pediu para exibir o nome do departamento --
 
 select case dependente.sexo when 'F' then 'Feminino' when 'M' then 'Masculino' end as sexo_dependente, nome_dependente, year(from_days(datediff(current_date, dependente.data_nascimento))) as anos_idade_dependente, concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento
 from funcionario
@@ -46,14 +46,14 @@ on funcionario.cpf = dependente.cpf_funcionario
 order by nome_funcionario asc;
 
 -- Questão 7 -- OK --
--- não falou para colocar nome do departamento --
+-- não pediu para exibir nome do departamento --
 
 select concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, numero_departamento as departamento, salario
 from funcionario
 where exists (select * from dependente where funcionario.cpf != dependente.cpf_funcionario);
 
 -- Questão 8 -- OK
--- não falou para exibir o nome do departamento ou nome dos projetos --
+-- não pediu para exibir o nome do departamento ou nome dos projetos --
 
 select  concat (primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, horas, nome_departamento, nome_projeto
 from funcionario
@@ -72,7 +72,7 @@ group by nome_departamento, nome_projeto
 order by nome_projeto asc;
 
 -- Questão 10 -- OK
--- não pediu para colocaexibirr no formato da moeda real --
+-- não pediu para exibir no formato da moeda real --
 
 select nome_departamento, avg(salario) as salario
 from funcionario 
@@ -99,7 +99,7 @@ right join trabalha_em on funcionario.cpf = trabalha_em.cpf_funcionario
 order by nome_projeto asc;
 
 -- Questão 13 -- OK 
--- ordem decrescente das idades (funcionários e dependentes) --
+-- ordem decrescente das idades como um todo, potanto as dos funcionários e dos dependentes --
 select concat(primeiro_nome, nome_meio, ultimo_nome) as nome_funcionario, sexo, year(from_days(datediff(current_date,funcionario.data_nascimento))) as anos_idade
 from funcionario
 union
