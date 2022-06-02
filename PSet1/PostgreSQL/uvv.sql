@@ -1,26 +1,38 @@
-create role amandaarnoni with createdb superuser login password '1234567' createrole bypassrls; 
-comment on role amandaarnoni is 'criação de um usuário';
+DROP DATABASE IF EXISTS uvv;
+DROP USER IF EXISTS amandaarnoni;
 
+\echo
+\echo Criando o usuário "amandaarnoni":
+create role amandaarnoni 
+with nosuperuser 
+createdb 
+createrole 
+login 
+encrypted password '1234567'; 
+
+\echo
+\echo Criando o banco de dados "uvv":
 create database uvv with 
-owner = amandaarnoni 
-template = template0 
-encoding = 'UTF8' 
-lc_collate = 'pt_BR.UTF-8' 
-lc_ctype = 'pt_BR.UTF-8'
-allow_connections = true;
-comment on database uvv is 'Criação do banco de dados uvv.';
+owner      = amandaarnoni
+  template   = template0
+  encoding   = 'UTF-8'
+  lc_collate = 'pt_BR.UTF-8'
+  lc_ctype   = 'pt_BR.UTF-8';
 
-\c uvv amandaarnoni;
+comment on database uvv is 'Banco de dados do PSet-1.';
 
-create schema elmasri authorization current_role;
-comment on schema elmasri is 'Criação do schema elmasri para o banco de dados uvv com o ascesso do usuário criado.';
+\echo
+\echo Conectando ao novo banco de dados:
+\c "dbname=uvv user=amandaarnoni password=1234567"
 
-set search_path to elmasri, '$user', public;
+\echo
+\echo Criando e configurando o schema "elmasri":
+CREATE SCHEMA elmasri AUTHORIZATION amandaarnoni;
+COMMENT ON SCHEMA elmasri IS 'Schema para o PSet-1.';
 
-alter user amandaarnoni
-set search_path to elmasri, '$user', public;
+alter user amandaarnoni set search_path to elmasri, "$user", public;
 
-\c uvv amandaarnoni;
+set search_path to elmasri, "$user", public;
 
 create table funcionario (
 cpf varchar(11) not null primary key,
