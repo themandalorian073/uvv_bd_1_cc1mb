@@ -19,11 +19,11 @@
 
 -- Remove o banco de dados "uvv", se existir:
 \echo
-\echo Removendo o banco de dados "uvv" e o usuário "abrantes":
+\echo Removendo o banco de dados "uvv" e o usuário "amandaarnoni":
 DROP DATABASE IF EXISTS uvv;
 
 -- Remove o usuário "abrantes", se existir:
-DROP USER IF EXISTS abrantes;
+DROP USER IF EXISTS amandaarnoni;
 
 
 
@@ -38,8 +38,8 @@ DROP USER IF EXISTS abrantes;
 -- segurança esse usuário não será um super-usuário. E, claro, como este é um
 -- script de demonstração, usaremos a super-senha "123456".
 \echo
-\echo Criando o usuário "abrantes":
-CREATE role abrantes WITH
+\echo Criando o usuário "amandaarnoni":
+CREATE role amandaarnoni WITH
   NOSUPERUSER
   CREATEDB
   CREATEROLE
@@ -53,7 +53,7 @@ CREATE role abrantes WITH
 \echo
 \echo Criando o banco de dados "uvv":
 CREATE DATABASE uvv WITH
-  owner      = abrantes
+  owner      = amandaarnoni
   template   = template0
   encoding   = 'UTF-8'
   lc_collate = 'pt_BR.UTF-8'
@@ -79,12 +79,12 @@ COMMENT ON DATABASE uvv IS 'Banco de dados do PSet-1.';
 -- das vezes).
 \echo
 \echo Conectando ao novo banco de dados:
-\c "dbname=uvv user=abrantes password=1234567"
+\c "dbname=uvv user=amandaarnoni password=1234567"
 
 -- Criação do schema "elmasri".
 \echo
 \echo Criando e configurando o schema "elmasri":
-CREATE SCHEMA elmasri AUTHORIZATION abrantes;
+CREATE SCHEMA elmasri AUTHORIZATION amandaarnoni;
 COMMENT ON SCHEMA elmasri IS 'Schema para o PSet-1.';
 
 -- Configura o SEARCH_PATH do usuário abrantes.
