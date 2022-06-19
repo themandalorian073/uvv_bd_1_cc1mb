@@ -423,224 +423,132 @@ COMMENT ON COLUMN imagem_programas.codigo_imagem IS 'PFK para a tabela imagens.'
 
 ALTER TABLE imagem_programas ADD CONSTRAINT imagens_imagem_programas_fk
 FOREIGN KEY (codigo_imagem)
-REFERENCES imagens (codigo_imagem)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES imagens (codigo_imagem);
 
 ALTER TABLE imagem_comunidades ADD CONSTRAINT imagens_imagem_comunidades_fk
 FOREIGN KEY (codigo_imagem)
-REFERENCES imagens (codigo_imagem)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES imagens (codigo_imagem);
 
 ALTER TABLE imagem_atendidos ADD CONSTRAINT imagens_imagem_atendidos_fk
 FOREIGN KEY (codigo_imagem)
-REFERENCES imagens (codigo_imagem)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES imagens (codigo_imagem);
 
 ALTER TABLE registram ADD CONSTRAINT imagens_registram_fk
 FOREIGN KEY (codigo_imagem)
-REFERENCES imagens (codigo_imagem)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES imagens (codigo_imagem);
 
 ALTER TABLE membros ADD CONSTRAINT uf_membros_fk
 FOREIGN KEY (endereco_uf)
-REFERENCES uf (sigla)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES uf (sigla);
 
 ALTER TABLE comunidades ADD CONSTRAINT uf_comunidades_fk
 FOREIGN KEY (endereco_uf)
-REFERENCES uf (sigla)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES uf (sigla);
 
 ALTER TABLE membros ADD CONSTRAINT cidades_membros_fk
 FOREIGN KEY (endereco_codigo_cidade)
-REFERENCES cidades (codigo)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES cidades (codigo);
 
 ALTER TABLE comunidades ADD CONSTRAINT cidades_comunidades_fk
 FOREIGN KEY (endereco_codigo_cidade)
-REFERENCES cidades (codigo)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES cidades (codigo);
 
 ALTER TABLE membros ADD CONSTRAINT bairros_membros_fk
 FOREIGN KEY (endereco_codigo_bairro)
-REFERENCES bairros (codigo)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES bairros (codigo);
+
+ALTER TABLE funcionario ADD CONSTRAINT ck_func_sexo
+CHECK (sexo IN ('M', 'F'));
+
 
 ALTER TABLE comunidades ADD CONSTRAINT bairros_comunidades_fk
 FOREIGN KEY (endereco_codigo_bairro)
-REFERENCES bairros (codigo)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES bairros (codigo);
 
 ALTER TABLE comunidades_telefones ADD CONSTRAINT comunidades_comunidades_telefones_fk
 FOREIGN KEY (codigo_comunidade)
-REFERENCES comunidades (codigo_comunidade)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES comunidades (codigo_comunidade);
 
 ALTER TABLE comunidades_emails ADD CONSTRAINT comunidades_comunidades_emails_fk
 FOREIGN KEY (codigo_comunidade)
-REFERENCES comunidades (codigo_comunidade)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES comunidades (codigo_comunidade);
 
 ALTER TABLE cadastram ADD CONSTRAINT comunidades_cadastram_fk
 FOREIGN KEY (codigo_comunidade)
-REFERENCES comunidades (codigo_comunidade)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES comunidades (codigo_comunidade);
 
 ALTER TABLE atendidos ADD CONSTRAINT comunidades_atendidos_fk
 FOREIGN KEY (codigo_comunidade)
-REFERENCES comunidades (codigo_comunidade)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES comunidades (codigo_comunidade);
 
 ALTER TABLE imagem_comunidades ADD CONSTRAINT comunidades_imagem_comunidades_fk
 FOREIGN KEY (codigo_comunidade)
-REFERENCES comunidades (codigo_comunidade)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES comunidades (codigo_comunidade);
 
 ALTER TABLE desenvolvem ADD CONSTRAINT comunidades_desenvolvem_fk
 FOREIGN KEY (codigo_comunidade)
-REFERENCES comunidades (codigo_comunidade)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES comunidades (codigo_comunidade);
 
 ALTER TABLE programas ADD CONSTRAINT comunidades_programas_fk
 FOREIGN KEY (codigo_comunidade)
-REFERENCES comunidades (codigo_comunidade)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES comunidades (codigo_comunidade);
 
 ALTER TABLE cadastram ADD CONSTRAINT atendidos_cadastram_fk
 FOREIGN KEY (codigo_atendidos)
-REFERENCES atendidos (codigo_atendidos)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES atendidos (codigo_atendidos);
 
 ALTER TABLE imagem_atendidos ADD CONSTRAINT atendidos_imagem_atendidos_fk
 FOREIGN KEY (codigo_atendidos)
-REFERENCES atendidos (codigo_atendidos)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES atendidos (codigo_atendidos);
 
 ALTER TABLE destinacoes ADD CONSTRAINT atendidos_destinacoes_fk
 FOREIGN KEY (codigo_atendidos)
-REFERENCES atendidos (codigo_atendidos)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES atendidos (codigo_atendidos);
 
 ALTER TABLE programas ADD CONSTRAINT membros_programas_fk
 FOREIGN KEY (codigo_membro)
-REFERENCES membros (codigo_membro)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES membros (codigo_membro);
 
 ALTER TABLE doacoes ADD CONSTRAINT membros_doacoes_fk
 FOREIGN KEY (codigo_membro)
-REFERENCES membros (codigo_membro)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES membros (codigo_membro);
 
 ALTER TABLE colaboram ADD CONSTRAINT membros_colaboram_fk
 FOREIGN KEY (codigo_membro)
-REFERENCES membros (codigo_membro)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES membros (codigo_membro);
 
 ALTER TABLE colaboram ADD CONSTRAINT membros_colaboram_fk1
 FOREIGN KEY (membros_codigo_membro)
-REFERENCES membros (codigo_membro)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES membros (codigo_membro);
 
 ALTER TABLE monetaria ADD CONSTRAINT doacoes_monetaria_fk
 FOREIGN KEY (codigo_doacao)
-REFERENCES doacoes (codigo_doacao)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES doacoes (codigo_doacao);
 
 ALTER TABLE bens ADD CONSTRAINT doacoes_bens_fk
 FOREIGN KEY (codigo_doacao)
-REFERENCES doacoes (codigo_doacao)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES doacoes (codigo_doacao);
 
 ALTER TABLE trabalhos ADD CONSTRAINT doacoes_trabalhos_fk
 FOREIGN KEY (codigo_doacao)
-REFERENCES doacoes (codigo_doacao)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES doacoes (codigo_doacao);
 
 ALTER TABLE destinacoes ADD CONSTRAINT doacoes_destinacoes_fk
 FOREIGN KEY (codigo_doacao)
-REFERENCES doacoes (codigo_doacao)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES doacoes (codigo_doacao);
 
 ALTER TABLE registram ADD CONSTRAINT destinacoes_registram_fk
 FOREIGN KEY (codigo_doacao, codigo_atendidos)
-REFERENCES destinacoes (codigo_doacao, codigo_atendidos)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES destinacoes (codigo_doacao, codigo_atendidos);
 
 ALTER TABLE disponibilidade ADD CONSTRAINT trabalhos_disponibilidade_fk
 FOREIGN KEY (codigo_doacao_trabalhos)
-REFERENCES trabalhos (codigo_doacao)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES trabalhos (codigo_doacao);
 
 ALTER TABLE imagem_programas ADD CONSTRAINT programas_imagem_programas_fk
 FOREIGN KEY (codigo_programa)
-REFERENCES programas (codigo_programa)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES programas (codigo_programa);
 
 ALTER TABLE desenvolvem ADD CONSTRAINT programas_desenvolvem_fk
 FOREIGN KEY (codigo_programa)
-REFERENCES programas (codigo_programa)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES programas (codigo_programa);
