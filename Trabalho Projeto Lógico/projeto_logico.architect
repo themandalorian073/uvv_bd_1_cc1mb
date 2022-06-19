@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>projeto_logico</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB1" populated="true" UUID="e88db709-f745-46ab-ace8-61b18d08dcf3" name="membros" objectType="TABLE" physicalName="membros" >
+   <remarks>Tabela que armazena informações a respeito dos membros da igreja.</remarks>
+   <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL2" populated="true" UUID="144da88e-1ed8-40bc-85bd-1543028b255c" autoIncrement="false" autoIncrementSequenceName="membros_codigo_membro_seq" defaultValue="" name="codigo_membro" nullable="0" physicalName="codigo_membro" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica os membros da igreja.</remarks>
+    </column>
+    <column id="COL3" populated="true" UUID="4b3368f5-8941-4707-b321-2a66529a5262" autoIncrement="false" autoIncrementSequenceName="membros_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome dos membros da igrja.</remarks>
+    </column>
+    <column id="COL4" populated="true" UUID="917a1f1e-c3ba-44e7-9a6e-4056d432ebd6" autoIncrement="false" autoIncrementSequenceName="membros_endereco_logradouro_seq" defaultValue="" name="endereco_logradouro" nullable="0" physicalName="endereco_logradouro" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do logradouro do endereço.</remarks>
+    </column>
+    <column id="COL5" populated="true" UUID="4045c556-6ff4-41be-92cc-11f376ca1077" autoIncrement="false" autoIncrementSequenceName="membros_endereco_numero_seq" defaultValue="" name="endereco_numero" nullable="0" physicalName="endereco_numero" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Número do endereço do membro da igreja.</remarks>
+    </column>
+    <column id="COL6" populated="true" UUID="0e2190ab-1bcb-4b76-933b-d06e5a8fae4d" autoIncrement="false" autoIncrementSequenceName="membros_endereco_complemento_seq" defaultValue="" name="endereco_complemento" nullable="1" physicalName="endereco_complemento" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Complemento do endereço.</remarks>
+    </column>
+    <column id="COL7" populated="true" UUID="b5dfd707-8b23-47f8-9968-03012780fb81" autoIncrement="false" autoIncrementSequenceName="bairros_endereco_codigo_bairro_seq" defaultValue="" name="endereco_codigo_bairro" nullable="0" physicalName="endereco_codigo_bairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>FK para a tabela de bairros.</remarks>
+    </column>
+    <column id="COL8" populated="true" UUID="795dd3d2-1740-412c-a126-8589eccb0b51" autoIncrement="false" autoIncrementSequenceName="cidades_endereco_codigo_cidade_seq" defaultValue="" name="endereco_codigo_cidade" nullable="0" physicalName="endereco_codigo_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>FK para a tabela de cidades.</remarks>
+    </column>
+    <column id="COL9" populated="true" UUID="f38760c6-e308-461e-85c4-21490c1bbb19" autoIncrement="false" autoIncrementSequenceName="uf_endereco_uf_seq" defaultValue="" name="endereco_uf" nullable="0" physicalName="endereco_uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>FK para a tabela uf.</remarks>
+    </column>
+    <column id="COL10" populated="true" UUID="ba962186-dcd3-4f85-81ad-b21e6dbcdd6c" autoIncrement="false" autoIncrementSequenceName="membros_endereco_cep_seq" defaultValue="" name="endereco_cep" nullable="0" physicalName="endereco_cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>CEP do endereço do membro da igreja.</remarks>
+    </column>
+    <column id="COL11" populated="true" UUID="e853e223-3f11-43d5-940d-a1dd3ce60620" autoIncrement="false" autoIncrementSequenceName="membros_profissao_seq" defaultValue="" name="profissao" nullable="0" physicalName="profissao" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Profissão dos membros da igreja.</remarks>
+    </column>
+    <column id="COL12" populated="true" UUID="014e6908-4b6b-40f7-8c7a-8dc540172f3d" autoIncrement="false" autoIncrementSequenceName="membros_data_de_nascimento_seq" defaultValue="" name="data_de_nascimento" nullable="0" physicalName="data_de_nascimento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Data de nascimento dos membros da igreja.</remarks>
+    </column>
+    <column id="COL13" populated="true" UUID="47b1e51c-8f09-4220-9b9f-2fec73186938" autoIncrement="false" autoIncrementSequenceName="membros_sexo_seq" defaultValue="" name="sexo" nullable="0" physicalName="sexo" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>Sexo dos membros da igreja.</remarks>
+    </column>
+    <column id="COL14" populated="true" UUID="7f2b4e07-08f8-4221-b883-e1b19121fbbf" autoIncrement="false" autoIncrementSequenceName="membros_estado_civil_seq" defaultValue="" name="estado_civil" nullable="0" physicalName="estado_civil" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>O estado civil dos membros da igreja.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB12" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB14" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX15" populated="true" UUID="b6f8d040-b3f9-4c1f-9f0f-f917f4c06c2e" clustered="false" name="pk_membros" physicalName="pk_membros" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC16" populated="true" UUID="72104abd-5b66-48e8-9a12-2b445815d517" ascendingOrDescending="UNSPECIFIED" column-ref="COL2" name="codigo_membro" physicalName="codigo_membro" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB17" populated="true" UUID="135d68ad-635a-494b-8d8c-244bed94a357" name="bairros" objectType="TABLE" physicalName="bairros" >
+   <remarks>Tabela que armazena os bairros das cidades.</remarks>
+   <folder id="FOLTAB171" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL18" populated="true" UUID="e9e0a883-d6a6-4f0e-9de8-b39b8c51e01c" autoIncrement="false" autoIncrementSequenceName="bairros_codigo_seq" defaultValue="" name="codigo" nullable="0" physicalName="codigo" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PK inventada para esta tabela, e é o código único e exclusivo de identificação de cada bairro.</remarks>
+    </column>
+    <column id="COL19" populated="true" UUID="e26bf8bc-8f5e-470f-8a19-b91870d069f2" autoIncrement="false" autoIncrementSequenceName="bairros_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nomes dos bairros.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB173" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB172" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB174" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX20" populated="true" UUID="e8102fd3-071c-42a3-86da-0d56075bf4ee" clustered="false" name="pk_bairros" physicalName="pk_bairros" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC21" populated="true" UUID="f0972856-faff-4961-bac4-d165e3cf6fda" ascendingOrDescending="UNSPECIFIED" column-ref="COL18" name="codigo" physicalName="codigo" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB22" populated="true" UUID="d4d471dc-5447-455c-9baf-9dc084a8e0e3" name="cidades" objectType="TABLE" physicalName="cidades" >
+   <remarks>Tabela que armaena as cidades do estado.</remarks>
+   <folder id="FOLTAB221" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL23" populated="true" UUID="153255c4-097a-4465-87ab-eabb228abb16" autoIncrement="false" autoIncrementSequenceName="cidades_codigo_seq" defaultValue="" name="codigo" nullable="0" physicalName="codigo" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PK da tabela, e o código único e exclusivo de cada cidade.</remarks>
+    </column>
+    <column id="COL24" populated="true" UUID="eefdb447-67ee-4140-87ab-e623cb553060" autoIncrement="false" autoIncrementSequenceName="cidades_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome padronizado das cidades.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB223" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB222" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB224" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX25" populated="true" UUID="57cd9dce-e72c-4d31-b0a1-a479d3482672" clustered="false" name="pk_cidades" physicalName="pk_cidades" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC26" populated="true" UUID="1cc9dc1d-1c20-41b0-a806-aec73f4c126e" ascendingOrDescending="UNSPECIFIED" column-ref="COL23" name="codigo" physicalName="codigo" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB27" populated="true" UUID="277fa2c9-8f60-4d4a-ae1e-a16763d94484" name="uf" objectType="TABLE" physicalName="uf" >
+   <remarks>Tabela que armazena as unidades da federação.</remarks>
+   <folder id="FOLTAB271" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL28" populated="true" UUID="8d50fb08-6a67-4c4c-9397-cbb35d1170cf" autoIncrement="false" autoIncrementSequenceName="uf_sigla_seq" defaultValue="" name="sigla" nullable="0" physicalName="sigla" precision="2" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>PK da tabela, é a sigla do estado.</remarks>
+    </column>
+    <column id="COL29" populated="true" UUID="5e29bb19-0feb-4285-9c82-61996743257b" autoIncrement="false" autoIncrementSequenceName="uf_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome padronizado da unidade da federação.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB273" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB272" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB274" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX30" populated="true" UUID="c03fd394-d5fa-4d43-9f83-0e8a6840cabb" clustered="false" name="pk_uf" physicalName="pk_uf" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC31" populated="true" UUID="7308ef96-dd04-47c4-a8fc-1c6707440562" ascendingOrDescending="UNSPECIFIED" column-ref="COL28" name="sigla" physicalName="sigla" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB32" populated="true" UUID="ed4d6d0a-c0bd-45cb-ac0f-6a091a332085" name="programas" objectType="TABLE" physicalName="programas" >
+   <remarks>Tabela que armazena dados sobre os programas da igreja.</remarks>
+   <folder id="FOLTAB321" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL33" populated="true" UUID="e5da2f6c-7b74-4496-ba20-7acbbe82b997" autoIncrement="false" autoIncrementSequenceName="programas_codigo_programa_seq" defaultValue="" name="codigo_programa" nullable="0" physicalName="codigo_programa" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica os programas da igreja.</remarks>
+    </column>
+    <column id="COL34" populated="true" UUID="cb17b064-e377-4204-8a34-c493639a1f84" autoIncrement="false" autoIncrementSequenceName="programas_codigo_comunidade_seq" defaultValue="" name="codigo_comunidade" nullable="0" physicalName="codigo_comunidade" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>FK para a tabela comunidades, indica as comunidades que desenvolveram os pragramas.</remarks>
+    </column>
+    <column id="COL35" populated="true" UUID="d4e8098e-4063-46ea-8764-a2abf0ed443c" autoIncrement="false" autoIncrementSequenceName="programas_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nomes dos programas.</remarks>
+    </column>
+    <column id="COL36" populated="true" UUID="557b9db0-8697-4eb4-82dd-fc9ccd3f7d56" autoIncrement="false" autoIncrementSequenceName="programas_descricao_seq" defaultValue="" name="descricao" nullable="0" physicalName="descricao" precision="1000" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-1" userDefinedTypeUUID="9a814859-ab26-4acd-9415-ea82291bcac1" >
+     <remarks>Descrição sobre o programa da igreja.</remarks>
+    </column>
+    <column id="COL37" populated="true" UUID="20b7b2e6-076d-4203-9251-5f6b38847eff" autoIncrement="false" autoIncrementSequenceName="programas_objetivos_seq" defaultValue="" name="objetivos" nullable="0" physicalName="objetivos" precision="1000" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-1" userDefinedTypeUUID="9a814859-ab26-4acd-9415-ea82291bcac1" >
+     <remarks>Objetivos que os programas da igreja almejam alcançar.</remarks>
+    </column>
+    <column id="COL38" populated="true" UUID="138457b8-c233-4d16-8178-eba6a0abb016" autoIncrement="false" autoIncrementSequenceName="programas_data_de_inicio_seq" defaultValue="" name="data_de_inicio" nullable="0" physicalName="data_de_inicio" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Data de ínicio dos programas da igreja, quando eles começaram a acontecer.</remarks>
+    </column>
+    <column id="COL39" populated="true" UUID="c05af1fe-fca2-49ff-bcfd-f5b5e5744642" autoIncrement="false" autoIncrementSequenceName="programas_data_final_prevista_seq" defaultValue="" name="data_final_prevista" nullable="1" physicalName="data_final_prevista" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Data prevista para o final dos programas da igreja.</remarks>
+    </column>
+    <column id="COL40" populated="true" UUID="8f075e8d-4dac-4817-b427-7fa176a0d82d" autoIncrement="false" autoIncrementSequenceName="programas_codigo_membro_seq" defaultValue="" name="codigo_membro" nullable="0" physicalName="codigo_membro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>FK para a tabela mebros que identifica quais membros trabalham nos projetos.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB323" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB322" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB324" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX41" populated="true" UUID="4790e12f-998d-4b04-9a96-57857214a3db" clustered="false" name="pk_programas" physicalName="pk_programas" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC42" populated="true" UUID="102cfbac-06b1-416d-8068-f73269373390" ascendingOrDescending="UNSPECIFIED" column-ref="COL33" name="codigo_programa" physicalName="codigo_programa" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB43" populated="true" UUID="cd804b74-97f4-4bfb-8c66-982c59192b76" name="comunidades" objectType="TABLE" physicalName="comunidades" >
+   <remarks>Tabela que armazena dados sobre as comunidades da igreja.</remarks>
+   <folder id="FOLTAB431" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL44" populated="true" UUID="ea0c0155-0216-4726-b077-7aefbb6801a2" autoIncrement="false" autoIncrementSequenceName="comunidades_codigo_comunidade_seq" defaultValue="" name="codigo_comunidade" nullable="0" physicalName="codigo_comunidade" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica as comunidades da igreja.</remarks>
+    </column>
+    <column id="COL45" populated="true" UUID="05ff895a-3324-455f-a52d-1e475f84d3b4" autoIncrement="false" autoIncrementSequenceName="comunidades_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome das comunidades da igreja.</remarks>
+    </column>
+    <column id="COL46" populated="true" UUID="0a9118f4-260f-4d1b-b28b-0ad2c56aa265" autoIncrement="false" autoIncrementSequenceName="comunidades_endereco_logradouro_seq" defaultValue="" name="endereco_logradouro" nullable="0" physicalName="endereco_logradouro" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do logradouro do endereço.</remarks>
+    </column>
+    <column id="COL47" populated="true" UUID="dcb8d46a-32f7-4aa7-bdc8-ee70270d2116" autoIncrement="false" autoIncrementSequenceName="comunidades_endereco_numero_seq" defaultValue="" name="endereco_numero" nullable="0" physicalName="endereco_numero" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Número dos endereços das comunidades.</remarks>
+    </column>
+    <column id="COL48" populated="true" UUID="7862a7df-1cb4-46d9-a447-4abc24eacdc8" autoIncrement="false" autoIncrementSequenceName="comunidades_endereco_complemento_seq" defaultValue="" name="endereco_complemento" nullable="1" physicalName="endereco_complemento" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Complemento do endereço.</remarks>
+    </column>
+    <column id="COL49" populated="true" UUID="4cc4daee-1d00-4f90-9dc4-e74b0313f685" autoIncrement="false" autoIncrementSequenceName="bairros_endereco_codigo_bairro_seq_1" defaultValue="" name="endereco_codigo_bairro" nullable="0" physicalName="endereco_codigo_bairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>FK para a tabela de bairros.</remarks>
+    </column>
+    <column id="COL50" populated="true" UUID="4c3f84e0-f999-478e-9072-5378decb8199" autoIncrement="false" autoIncrementSequenceName="cidades_endereco_codigo_cidade_seq_1" defaultValue="" name="endereco_codigo_cidade" nullable="0" physicalName="endereco_codigo_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>FK para a tabela de cidades.</remarks>
+    </column>
+    <column id="COL51" populated="true" UUID="8246ab43-6994-4bb4-bd25-90904f23fcd6" autoIncrement="false" autoIncrementSequenceName="uf_endereco_uf_seq_1" defaultValue="" name="endereco_uf" nullable="0" physicalName="endereco_uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>FK para a tabela de uf.</remarks>
+    </column>
+    <column id="COL52" populated="true" UUID="497e451c-244d-4fd0-bf1c-aa5362feddc5" autoIncrement="false" autoIncrementSequenceName="comunidades_endereco_cep_seq" defaultValue="" name="endereco_cep" nullable="0" physicalName="endereco_cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>CEP dos endereços das comunidades.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB433" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB432" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB434" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX53" populated="true" UUID="f7d570a1-280f-42fd-90d5-bc387b44af24" clustered="false" name="pk_comunidades" physicalName="pk_comunidades" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC54" populated="true" UUID="a42e0353-279a-4a9a-966d-3ff6d8b5a462" ascendingOrDescending="UNSPECIFIED" column-ref="COL44" name="codigo_comunidade" physicalName="codigo_comunidade" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB55" populated="true" UUID="d3921b9a-94e1-4876-9be6-86095974105e" name="imagens" objectType="TABLE" physicalName="imagens" >
+   <remarks>Tabela que armazena dados sobre as imagens.</remarks>
+   <folder id="FOLTAB551" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL56" populated="true" UUID="23dc3af4-1227-4599-86b0-12f7a893efd1" autoIncrement="false" autoIncrementSequenceName="imagens_codigo_imagem_seq" defaultValue="" name="codigo_imagem" nullable="0" physicalName="codigo_imagem" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Cóodigo da imagem das destinações da igreja.</remarks>
+    </column>
+    <column id="COL57" populated="true" UUID="50df9d34-12af-46de-acb0-f7e7f3719618" autoIncrement="false" autoIncrementSequenceName="imagens_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nomes das imagens.</remarks>
+    </column>
+    <column id="COL58" populated="true" UUID="59255bb9-150a-45ac-b3a1-e009bc50e778" autoIncrement="false" autoIncrementSequenceName="imagens_descricao_seq" defaultValue="" name="descricao" nullable="0" physicalName="descricao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-1" userDefinedTypeUUID="9a814859-ab26-4acd-9415-ea82291bcac1" >
+     <remarks>Descrição das imagens das destinações da igreja.</remarks>
+    </column>
+    <column id="COL59" populated="true" UUID="0383a238-2057-4ca4-86c8-893dedb55cc0" autoIncrement="false" autoIncrementSequenceName="imagens_data_registro_seq" defaultValue="" name="data_registro" nullable="0" physicalName="data_registro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Data que as imagens foram registradas.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB553" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB552" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB554" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX60" populated="true" UUID="3e88f420-c7f1-4b6a-b0eb-cf0b976c2105" clustered="false" name="pk_imagens" physicalName="pk_imagens" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC61" populated="true" UUID="b1cec73d-40e3-4f95-9c03-e6c526ef6a0e" ascendingOrDescending="UNSPECIFIED" column-ref="COL56" name="codigo_imagem" physicalName="codigo_imagem" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB62" populated="true" UUID="a5797522-83b4-4657-8b53-08b850381de1" name="comunidades_telefones" objectType="TABLE" physicalName="comunidades_telefones" >
+   <remarks>Tabela que armazena os telefones das comunidades da igreja.</remarks>
+   <folder id="FOLTAB621" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL63" populated="true" UUID="8c5b73c0-52d3-4c0b-9e34-0dc5b5c0ab05" autoIncrement="false" autoIncrementSequenceName="comunidades_telefones_codigo_comunidade_seq" defaultValue="" name="codigo_comunidade" nullable="0" physicalName="codigo_comunidade" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica as comunidades da igreja, também é PFK para a tabela comunidades.</remarks>
+    </column>
+    <column id="COL64" populated="true" UUID="ee4629f8-f03b-4702-abdb-6981a4c363f0" autoIncrement="false" autoIncrementSequenceName="comunidades_telefones_numero_seq" defaultValue="" name="numero" nullable="0" physicalName="numero" precision="11" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Número e DDD do telefone do cliente, também é PK da tabela.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB623" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB622" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB624" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX65" populated="true" UUID="db98a4ac-2999-45db-8b10-62dadaf8082f" clustered="false" name="pk_comunidades_telefones" physicalName="pk_comunidades_telefones" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC66" populated="true" UUID="c558fceb-e0e5-4fb7-aa2c-65d26938d4cf" ascendingOrDescending="UNSPECIFIED" column-ref="COL63" name="codigo_comunidade" physicalName="codigo_comunidade" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB67" populated="true" UUID="cbed7cf2-4823-4e80-a579-ff898beec23b" name="comunidades_emails" objectType="TABLE" physicalName="comunidades_emails" >
+   <remarks>Tabela que armazena os emails dss comunidades da igreja.</remarks>
+   <folder id="FOLTAB671" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL68" populated="true" UUID="2ef32868-c246-4f15-baaf-be5df49dc7cc" autoIncrement="false" autoIncrementSequenceName="comunidades_emails_codigo_comunidade_seq" defaultValue="" name="codigo_comunidade" nullable="0" physicalName="codigo_comunidade" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica as comunidades da igreja, também é PFK para a tabela comunidades.</remarks>
+    </column>
+    <column id="COL69" populated="true" UUID="eff082ff-72b3-4c7c-83cc-827b48238f36" autoIncrement="false" autoIncrementSequenceName="comunidades_emails_email_seq" defaultValue="" name="email" nullable="1" physicalName="email" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Email da comunidade da igreja, também é PK da tabela.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB673" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB672" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB674" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX70" populated="true" UUID="ca59c4c5-e65f-4d91-8d48-e1f02548771e" clustered="false" name="pk_comunidades_emails" physicalName="pk_comunidades_emails" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC71" populated="true" UUID="1b55a938-e82b-4b16-8759-affa3f6cd3f0" ascendingOrDescending="UNSPECIFIED" column-ref="COL68" name="codigo_comunidade" physicalName="codigo_comunidade" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB72" populated="true" UUID="a54ca1e5-b0b0-45d4-ba52-687b9c5d4010" name="doacoes" objectType="TABLE" physicalName="doacoes" >
+   <remarks>Tabela que armazena dados sobre as doações feitas para a igreja.</remarks>
+   <folder id="FOLTAB721" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL73" populated="true" UUID="e58c34b3-6d60-4935-a6fb-74013a365004" autoIncrement="false" autoIncrementSequenceName="doacoes_codigo_doacao_seq" defaultValue="" name="codigo_doacao" nullable="0" physicalName="codigo_doacao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica as doações da igreja.</remarks>
+    </column>
+    <column id="COL74" populated="true" UUID="bd2cdf3d-052c-4e24-b8c8-4b8728931583" autoIncrement="false" autoIncrementSequenceName="doacoes_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome das doações.</remarks>
+    </column>
+    <column id="COL75" populated="true" UUID="330777fa-4805-4f56-b5d2-81e4ef401a2a" autoIncrement="false" autoIncrementSequenceName="doacoes_data_doacao_seq" defaultValue="" name="data_doacao" nullable="0" physicalName="data_doacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Data que aa doações foi feitas para a igreja.</remarks>
+    </column>
+    <column id="COL76" populated="true" UUID="e83850e0-ebd2-44a5-8b6f-b73f158d3ec2" autoIncrement="false" autoIncrementSequenceName="doacoes_identificacao_doador_seq" defaultValue="" name="identificacao_doador" nullable="1" physicalName="identificacao_doador" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Identificação de quem fez a doação da igreja.</remarks>
+    </column>
+    <column id="COL77" populated="true" UUID="cd4de5c8-9a54-4c0f-bea7-4ec9bbefba9a" autoIncrement="false" autoIncrementSequenceName="doacoes_tipo_seq" defaultValue="" name="tipo" nullable="0" physicalName="tipo" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Tipo da doação, monetária, bens ou trabalhos.</remarks>
+    </column>
+    <column id="COL78" populated="true" UUID="9700db56-7540-449d-8d75-8f211382dbdf" autoIncrement="false" autoIncrementSequenceName="membros_codigo_membro_seq_1" defaultValue="" name="codigo_membro" nullable="0" physicalName="codigo_membro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>FK para a tabela membros.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB723" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB722" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB724" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX79" populated="true" UUID="6245d657-5105-4942-aff6-0126d02e65a8" clustered="false" name="pk_doacoes" physicalName="pk_doacoes" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC80" populated="true" UUID="9524e0b4-56bc-49d6-9c61-0f1026de01bd" ascendingOrDescending="UNSPECIFIED" column-ref="COL73" name="codigo_doacao" physicalName="codigo_doacao" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB81" populated="true" UUID="9f58740e-1a6c-4668-8d08-694061371cde" name="monetaria" objectType="TABLE" physicalName="monetaria" >
+   <remarks>Tabela que armazena dados sobre as doações monetárias.</remarks>
+   <folder id="FOLTAB811" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL82" populated="true" UUID="30bd1f58-b5ed-479a-9688-a73d57752851" autoIncrement="false" autoIncrementSequenceName="monetaria_codigo_doacao_seq" defaultValue="" name="codigo_doacao" nullable="0" physicalName="codigo_doacao" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela doacoes.</remarks>
+    </column>
+    <column id="COL83" populated="true" UUID="c601d745-4f88-4117-aaa8-a824f20304a6" autoIncrement="false" autoIncrementSequenceName="monetaria_valor_seq" defaultValue="" name="valor" nullable="0" physicalName="valor" precision="9" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
+     <remarks>Valor da doação feita para a igreja.</remarks>
+    </column>
+    <column id="COL84" populated="true" UUID="fa3d9c72-bf2f-4862-b94e-e794e2129eee" autoIncrement="false" autoIncrementSequenceName="monetaria_tipo_moeda_seq" defaultValue="" name="tipo_moeda" nullable="0" physicalName="tipo_moeda" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Tipo da moeda que foi usada para fazer a doação para a igreja.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB813" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB812" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB814" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX85" populated="true" UUID="385bac03-1851-439d-b8a2-2f5012fece55" clustered="false" name="pk_monetaria" physicalName="pk_monetaria" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC86" populated="true" UUID="55660cf0-2191-4b0c-9ed8-a4c028c9303d" ascendingOrDescending="UNSPECIFIED" column-ref="COL82" name="codigo_doacao" physicalName="codigo_doacao" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB87" populated="true" UUID="e0d1ebc2-93f7-40b2-a610-27edf6fa8823" name="bens" objectType="TABLE" physicalName="bens" >
+   <remarks>Tabela que armazena dados a respeio das doações feitas em bens para a igreja.</remarks>
+   <folder id="FOLTAB871" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL88" populated="true" UUID="739aba16-0312-45f4-b5b6-7117cf48c749" autoIncrement="false" autoIncrementSequenceName="bens_codigo_doacao_seq" defaultValue="" name="codigo_doacao" nullable="0" physicalName="codigo_doacao" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela doacoes.</remarks>
+    </column>
+    <column id="COL89" populated="true" UUID="191e7524-2b31-4798-9795-fa7100f7ae13" autoIncrement="false" autoIncrementSequenceName="bens_descricao_seq" defaultValue="" name="descricao" nullable="0" physicalName="descricao" precision="1000" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-16" userDefinedTypeUUID="895cdc41-03a5-44f8-b41c-43668f815af2" >
+     <remarks>Descrição dos bens que foram doados para a igreja.</remarks>
+    </column>
+    <column id="COL90" populated="true" UUID="fdbfd3f2-2e37-4b92-b6e9-2f999bbd5de7" autoIncrement="false" autoIncrementSequenceName="bens_tipo_seq" defaultValue="" name="tipo" nullable="0" physicalName="tipo" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Tipo dos bens que foram doados para a igreja</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB873" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB872" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB874" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX91" populated="true" UUID="ef165a6b-f098-4da4-9ff0-52d5c1bc5246" clustered="false" name="pk_bens" physicalName="pk_bens" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC92" populated="true" UUID="dfcea0c5-2438-4b57-9516-46b8ddc6ae38" ascendingOrDescending="UNSPECIFIED" column-ref="COL88" name="codigo_doacao" physicalName="codigo_doacao" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB93" populated="true" UUID="46badf23-20d2-4091-a74b-55bbeb67c58c" name="trabalhos" objectType="TABLE" physicalName="trabalhos" >
+   <remarks>Tabela que armazena dados a respeio das doações feitas em trabalhos voluntários para a igreja.</remarks>
+   <folder id="FOLTAB931" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL94" populated="true" UUID="8191ad45-4861-4028-b6de-da4b947da4e5" autoIncrement="false" autoIncrementSequenceName="trabalhos_codigo_doacao_seq" defaultValue="" name="codigo_doacao" nullable="0" physicalName="codigo_doacao" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela doacoes.</remarks>
+    </column>
+    <column id="COL95" populated="true" UUID="b838cc30-6fb6-48be-8805-f9be362a817b" autoIncrement="false" autoIncrementSequenceName="trabalhos_tipo_trabalho_seq" defaultValue="" name="tipo_trabalho" nullable="0" physicalName="tipo_trabalho" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Tipo do trabalho voluntário que foi doado para a igreja.</remarks>
+    </column>
+    <column id="COL96" populated="true" UUID="ff17a18b-0fb8-48d2-b85d-7d1798d610da" autoIncrement="false" autoIncrementSequenceName="trabalhos_nome_doador_seq" defaultValue="" name="nome_doador" nullable="0" physicalName="nome_doador" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome de quem fez a doação em trabalho.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB933" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB932" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB934" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX97" populated="true" UUID="9d5ea108-8660-4bc5-88f9-718ed8f5a229" clustered="false" name="pk_trabalhos" physicalName="pk_trabalhos" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC98" populated="true" UUID="244bb9eb-768b-4aff-be24-675fced1e25c" ascendingOrDescending="UNSPECIFIED" column-ref="COL94" name="codigo_doacao" physicalName="codigo_doacao" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB99" populated="true" UUID="a7d4c3a5-17eb-44fd-b227-b438aaca2465" name="atendidos" objectType="TABLE" physicalName="atendidos" >
+   <remarks>Tabela que armazena os atendidos das comunidades da igreja.</remarks>
+   <folder id="FOLTAB991" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL100" populated="true" UUID="d33684d4-dd06-42a3-ad98-a9e23f88b123" autoIncrement="false" autoIncrementSequenceName="atendidos_codigo_atendidos_seq" defaultValue="" name="codigo_atendidos" nullable="0" physicalName="codigo_atendidos" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica os atendidos.</remarks>
+    </column>
+    <column id="COL101" populated="true" UUID="9d04d337-3828-4f32-842e-d2dbc18ae0fb" autoIncrement="false" autoIncrementSequenceName="atendidos_codigo_comunidade_seq" defaultValue="" name="codigo_comunidade" nullable="0" physicalName="codigo_comunidade" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL102" populated="true" UUID="88080c15-1168-448b-8d79-45bd4f2f56ab" autoIncrement="false" autoIncrementSequenceName="atendidos_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome dos atendidos das comunidades da igreja.</remarks>
+    </column>
+    <column id="COL103" populated="true" UUID="b1a34276-84d2-4ad9-b301-27c71d89023e" autoIncrement="false" autoIncrementSequenceName="atendidos_cpf_seq" defaultValue="" name="cpf" nullable="1" physicalName="cpf" precision="11" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>CPF doa atendidos das comunidades da igreja.</remarks>
+    </column>
+    <column id="COL104" populated="true" UUID="691e7857-e049-43a9-adba-5213f82934e1" autoIncrement="false" autoIncrementSequenceName="atendidos_cnpj_seq" defaultValue="" name="cnpj" nullable="1" physicalName="cnpj" precision="14" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>CNPJ dos atendidos das comunidades da igreja.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB993" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB992" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB994" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX105" populated="true" UUID="b262a955-658a-4099-9929-af9be142d354" clustered="false" name="pk_atendidos" physicalName="pk_atendidos" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC106" populated="true" UUID="d1cda062-d135-4415-b189-b55f0c411a40" ascendingOrDescending="UNSPECIFIED" column-ref="COL100" name="codigo_atendidos" physicalName="codigo_atendidos" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB107" populated="true" UUID="cde90dc0-3d2c-4c33-b5a9-4d9d85e9aab8" name="cadastram" objectType="TABLE" physicalName="cadastram" >
+   <remarks>Tabela que guarda dados das tabelas comunidades e atendidos</remarks>
+   <folder id="FOLTAB1071" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL108" populated="true" UUID="bfa9f954-8473-466e-8ee4-5ad72035b620" autoIncrement="false" autoIncrementSequenceName="cadastram_codigo_comunidade_seq" defaultValue="" name="codigo_comunidade" nullable="0" physicalName="codigo_comunidade" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica as comunidades da igreja.</remarks>
+    </column>
+    <column id="COL109" populated="true" UUID="e1128dfa-29e4-465f-9308-d652a9577b19" autoIncrement="false" autoIncrementSequenceName="cadastram_codigo_atendidos_seq" defaultValue="" name="codigo_atendidos" nullable="0" physicalName="codigo_atendidos" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica os atendidos.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1073" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1072" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1074" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX110" populated="true" UUID="7a72f303-0400-4226-993a-7c9498e23ac4" clustered="false" name="codigo_comunidade, codigo_atendidos" physicalName="codigo_comunidade,_codigo_atendidos" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC111" populated="true" UUID="a61f2c8e-0cb2-4238-a20f-8005c85d11fd" ascendingOrDescending="UNSPECIFIED" column-ref="COL108" name="codigo_comunidade" physicalName="codigo_comunidade" />
+     <index-column id="IDC112" populated="true" UUID="690734f1-083b-4d10-8163-899ad33e3122" ascendingOrDescending="UNSPECIFIED" column-ref="COL109" name="codigo_atendidos" physicalName="codigo_atendidos" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB113" populated="true" UUID="23782f80-9651-4f56-9a52-ad1aed5735fd" name="imagem_programas" objectType="TABLE" physicalName="imagem_programas" >
+   <remarks>Tabela que guarda dados para as tabelas programas e imagens.</remarks>
+   <folder id="FOLTAB1131" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL114" populated="true" UUID="3f5eda18-1c2e-4a28-b5ba-666151a723db" autoIncrement="false" autoIncrementSequenceName="imagem_programas_codigo_programa_seq" defaultValue="" name="codigo_programa" nullable="0" physicalName="codigo_programa" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela programas.</remarks>
+    </column>
+    <column id="COL115" populated="true" UUID="5b7d3733-8719-4ab1-905c-0c2e209c293f" autoIncrement="false" autoIncrementSequenceName="imagem_programas_codigo_imagem_seq" defaultValue="" name="codigo_imagem" nullable="0" physicalName="codigo_imagem" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela imagens.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1133" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1132" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1134" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX116" populated="true" UUID="1a5bd81f-57a1-4b81-b0c5-26cc8468ebd5" clustered="false" name="codigo_programa, codigo_imagem" physicalName="codigo_programa,_codigo_imagem" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC117" populated="true" UUID="db25a4ae-2ec7-4952-9fda-0ea898b65214" ascendingOrDescending="UNSPECIFIED" column-ref="COL114" name="codigo_programa" physicalName="codigo_programa" />
+     <index-column id="IDC118" populated="true" UUID="2c6f88ef-3a70-4d86-a519-cc5807960b19" ascendingOrDescending="UNSPECIFIED" column-ref="COL115" name="codigo_imagem" physicalName="codigo_imagem" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB119" populated="true" UUID="e0733946-fdd7-4a84-a848-cd29214f28a2" name="imagem_comunidades" objectType="TABLE" physicalName="imagem_comunidades" >
+   <remarks>Tabela que guarda dados para as tabelas imagens e comunidades.</remarks>
+   <folder id="FOLTAB1191" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL120" populated="true" UUID="d5516172-7369-4cae-9ae1-89c1cd5872b0" autoIncrement="false" autoIncrementSequenceName="imagem_comunidades_codigo_comunidade_seq" defaultValue="" name="codigo_comunidade" nullable="0" physicalName="codigo_comunidade" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela comunidades.</remarks>
+    </column>
+    <column id="COL121" populated="true" UUID="6c94c207-d428-4494-a844-4a2ed11678db" autoIncrement="false" autoIncrementSequenceName="imagem_comunidades_codigo_imagem_seq" defaultValue="" name="codigo_imagem" nullable="0" physicalName="codigo_imagem" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela imagens.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1193" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1192" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1194" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX122" populated="true" UUID="eb4a1a12-ff71-41ba-aab5-1e26835885cf" clustered="false" name="codigo_comunidade, codigo_imagem" physicalName="codigo_comunidade,_codigo_imagem" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC123" populated="true" UUID="61083cff-4cf0-49d5-8df3-8f2e613947ac" ascendingOrDescending="UNSPECIFIED" column-ref="COL120" name="codigo_comunidade" physicalName="codigo_comunidade" />
+     <index-column id="IDC124" populated="true" UUID="dd7f593b-f304-42c8-9492-72e092e3d122" ascendingOrDescending="UNSPECIFIED" column-ref="COL121" name="codigo_imagem" physicalName="codigo_imagem" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB125" populated="true" UUID="0fc3ca3e-3cdb-48d4-b849-0cda451b2675" name="imagem_atendidos" objectType="TABLE" physicalName="imagem_atendidos" >
+   <remarks>Tabela que guarda dados para as tabelas imagens e atendidos.</remarks>
+   <folder id="FOLTAB1251" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL126" populated="true" UUID="3589614f-0a85-45b0-8fc5-9a56c6c938d5" autoIncrement="false" autoIncrementSequenceName="imagem_atendidos_codigo_atendidos_seq" defaultValue="" name="codigo_atendidos" nullable="0" physicalName="codigo_atendidos" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela atendidos.</remarks>
+    </column>
+    <column id="COL127" populated="true" UUID="6e3c7684-b472-479e-b47e-593b4d030c00" autoIncrement="false" autoIncrementSequenceName="imagem_atendidos_codigo_imagem_seq" defaultValue="" name="codigo_imagem" nullable="0" physicalName="codigo_imagem" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela imagens.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1253" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1252" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1254" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX128" populated="true" UUID="1248654e-58a4-4ae4-9025-84086ddbaed6" clustered="false" name="codigo_atendidos, codigo_imagem" physicalName="codigo_atendidos,_codigo_imagem" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC129" populated="true" UUID="05d36c28-bbca-4b3d-bca9-a4a939d2a35f" ascendingOrDescending="UNSPECIFIED" column-ref="COL126" name="codigo_atendidos" physicalName="codigo_atendidos" />
+     <index-column id="IDC130" populated="true" UUID="2da93161-72e7-42be-a0bc-747ef85b5463" ascendingOrDescending="UNSPECIFIED" column-ref="COL127" name="codigo_imagem" physicalName="codigo_imagem" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB131" populated="true" UUID="ef002042-c9ee-450c-94b2-b63176771871" name="disponibilidade" objectType="TABLE" physicalName="disponibilidade" >
+   <remarks></remarks>
+   <folder id="FOLTAB1311" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL132" populated="true" UUID="492f0191-9e20-440f-9efe-5e7567fe8190" autoIncrement="false" autoIncrementSequenceName="trabalhos_codigo_doacao_trabalhos_seq" defaultValue="" name="codigo_doacao_trabalhos" nullable="0" physicalName="codigo_doacao_trabalhos" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela trabalhos.</remarks>
+    </column>
+    <column id="COL133" populated="true" UUID="b3ae36a1-7d42-43df-8d63-2dd152251e31" autoIncrement="false" autoIncrementSequenceName="disponibilidade_data_seq" defaultValue="" name="data" nullable="0" physicalName="data" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Datas disponíveis para a realização dos trabalhos.</remarks>
+    </column>
+    <column id="COL134" populated="true" UUID="e783771c-c003-459e-a36c-6952a539b153" autoIncrement="false" autoIncrementSequenceName="disponibilidade_hora_seq" defaultValue="" name="hora" nullable="0" physicalName="hora" precision="5" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Horários disponíveis para a realização dos trabalhos.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1313" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1312" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1314" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX135" populated="true" UUID="da4a3057-eefa-4110-a046-b19445edba82" clustered="false" name="pk_disponibilidade" physicalName="pk_disponibilidade" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC136" populated="true" UUID="20e246e5-7574-4aeb-9337-58eea9439444" ascendingOrDescending="UNSPECIFIED" column-ref="COL132" name="codigo_doacao_trabalhos" physicalName="codigo_doacao_trabalhos" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB137" populated="true" UUID="89b14d4e-81eb-4646-a1a4-96f49b035833" name="destinacoes" objectType="TABLE" physicalName="destinacoes" >
+   <remarks>Guarda dados para as tabelas doacoes e atendidos, também traz informações a respeito das destinações.</remarks>
+   <folder id="FOLTAB1371" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL138" populated="true" UUID="fa4f0f85-b84c-4c3b-8a01-843240369129" autoIncrement="false" autoIncrementSequenceName="destinacoes_codigo_doacao_seq" defaultValue="" name="codigo_doacao" nullable="0" physicalName="codigo_doacao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica as doações da igreja.</remarks>
+    </column>
+    <column id="COL139" populated="true" UUID="5c98b5ee-4a85-44af-8419-0f5a624f7b24" autoIncrement="false" autoIncrementSequenceName="destinacoes_codigo_atendidos_seq" defaultValue="" name="codigo_atendidos" nullable="0" physicalName="codigo_atendidos" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica os atendidos.</remarks>
+    </column>
+    <column id="COL140" populated="true" UUID="a1a11bf0-282d-4cd1-90fa-eb9ebfe21e87" autoIncrement="false" autoIncrementSequenceName="destinacoes_nome_destinacao_seq" defaultValue="" name="nome_destinacao" nullable="0" physicalName="nome_destinacao" precision="0" referenceCount="0" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nomes das destinações da igreja.</remarks>
+    </column>
+    <column id="COL141" populated="true" UUID="6e4b4318-08d3-45e5-8d72-810c9f034a75" autoIncrement="false" autoIncrementSequenceName="destinacoes_data_seq" defaultValue="" name="data" nullable="0" physicalName="data" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Datas da idas às destinações da igreja.</remarks>
+    </column>
+    <column id="COL142" populated="true" UUID="38eb19a0-5ed4-43a1-b77f-bfc74da1cb50" autoIncrement="false" autoIncrementSequenceName="destinacoes_obcervacoes_seq" defaultValue="" name="obcervacoes" nullable="1" physicalName="obcervacoes" precision="0" referenceCount="0" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-1" userDefinedTypeUUID="9a814859-ab26-4acd-9415-ea82291bcac1" >
+     <remarks>Observações a respeito das destinações da igreja.</remarks>
+    </column>
+    <column id="COL143" populated="true" UUID="30e4b1f9-4198-4cb3-ace8-f62c42f24f5b" autoIncrement="false" autoIncrementSequenceName="destinacoes_recebedor_seq" defaultValue="" name="recebedor" nullable="0" physicalName="recebedor" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nomes dos recebedores nas destinações da igreja.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1373" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1372" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1374" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX144" populated="true" UUID="255ffaf5-1c69-4cde-bf93-20668c9a334f" clustered="false" name="codigo_doacao, codigo_atendidos" physicalName="codigo_doacao,_codigo_atendidos" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC145" populated="true" UUID="62107d1e-b732-45ff-9240-6baa1ab17bff" ascendingOrDescending="UNSPECIFIED" column-ref="COL138" name="codigo_doacao" physicalName="codigo_doacao" />
+     <index-column id="IDC146" populated="true" UUID="f45bea5a-ec5f-48a3-a2bc-2e46dba79d38" ascendingOrDescending="UNSPECIFIED" column-ref="COL139" name="codigo_atendidos" physicalName="codigo_atendidos" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB147" populated="true" UUID="2563dcc7-1400-467c-ad9a-45e1c3fac0d6" name="registram" objectType="TABLE" physicalName="registram" >
+   <remarks>Tabela que guarda dados das tabelas imagens e destinacoes.</remarks>
+   <folder id="FOLTAB1471" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL148" populated="true" UUID="03754668-42b7-4993-88a5-d2ed149b87bf" autoIncrement="false" autoIncrementSequenceName="registram_codigo_imagem_seq" defaultValue="" name="codigo_imagem" nullable="0" physicalName="codigo_imagem" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Cóodigo da imagem das destinações da igreja.</remarks>
+    </column>
+    <column id="COL149" populated="true" UUID="7dff2995-6530-4c41-b65b-822b5b4cdf3b" autoIncrement="false" autoIncrementSequenceName="registram_codigo_doacao_seq" defaultValue="" name="codigo_doacao" nullable="0" physicalName="codigo_doacao" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica as doações da igreja.</remarks>
+    </column>
+    <column id="COL150" populated="true" UUID="4f2ba8d0-2b50-45de-b887-66a00a9a88d9" autoIncrement="false" autoIncrementSequenceName="registram_codigo_atendidos_seq" defaultValue="" name="codigo_atendidos" nullable="0" physicalName="codigo_atendidos" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica os atendidos.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1473" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1472" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1474" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX151" populated="true" UUID="e4e43e05-feff-4d45-beee-f28648202d4e" clustered="false" name="codigo_imagem, codigo_doacao, codigo_atendidos" physicalName="codigo_imagem,_codigo_doacao,_codigo_atendidos" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC152" populated="true" UUID="aef4da6a-685c-4ad8-8d90-1c08629fca55" ascendingOrDescending="UNSPECIFIED" column-ref="COL148" name="codigo_imagem" physicalName="codigo_imagem" />
+     <index-column id="IDC153" populated="true" UUID="acb59321-c68c-4565-ac95-b54989ca7b6e" ascendingOrDescending="UNSPECIFIED" column-ref="COL149" name="codigo_doacao" physicalName="codigo_doacao" />
+     <index-column id="IDC154" populated="true" UUID="bbeff2e1-8b16-46fa-a27a-879648314165" ascendingOrDescending="UNSPECIFIED" column-ref="COL150" name="codigo_atendidos" physicalName="codigo_atendidos" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB155" populated="true" UUID="cabbcd64-658d-40aa-8c88-2cf4b7e24192" name="colaboram" objectType="TABLE" physicalName="colaboram" >
+   <remarks>Tabela de autorelacionamento e que guarda dados para a tabela membros.</remarks>
+   <folder id="FOLTAB1551" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL156" populated="true" UUID="7a4fbe82-d874-4513-b683-4eee4d52c7e2" autoIncrement="false" autoIncrementSequenceName="colaboram_codigo_membro_seq" defaultValue="" name="codigo_membro" nullable="0" physicalName="codigo_membro" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela membros, autorelacionamento.</remarks>
+    </column>
+    <column id="COL157" populated="true" UUID="efc39d78-7b61-4cb7-ac90-3a5d73c580d2" autoIncrement="false" autoIncrementSequenceName="colaboram_membros_codigo_membro_seq" defaultValue="" name="membros_codigo_membro" nullable="0" physicalName="membros_codigo_membro" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK para a tabela membros, autorelacionamento.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1553" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1552" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1554" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX158" populated="true" UUID="c862e254-7a79-4b60-bd0a-3b1bbad97c9f" clustered="false" name="codigo_membro, membros_codigo_membro" physicalName="codigo_membro,_membros_codigo_membro" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC159" populated="true" UUID="9d791a6b-8be3-46da-aa45-8ba3f314362f" ascendingOrDescending="UNSPECIFIED" column-ref="COL156" name="codigo_membro" physicalName="codigo_membro" />
+     <index-column id="IDC160" populated="true" UUID="6a26d76f-6395-45dc-978e-6511fd623d25" ascendingOrDescending="UNSPECIFIED" column-ref="COL157" name="membros_codigo_membro" physicalName="membros_codigo_membro" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB161" populated="true" UUID="38c8ec80-8084-4d70-9965-c2dc3dc3f5b7" name="desenvolvem" objectType="TABLE" physicalName="desenvolvem" >
+   <remarks>Tabela que guarda dados para as tabelas programas e comunidades.</remarks>
+   <folder id="FOLTAB1611" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL162" populated="true" UUID="db241ce4-d898-45ad-8294-6f9d998cdebf" autoIncrement="false" autoIncrementSequenceName="desenvolvem_codigo_programa_seq" defaultValue="" name="codigo_programa" nullable="0" physicalName="codigo_programa" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica os programas da igreja.</remarks>
+    </column>
+    <column id="COL163" populated="true" UUID="c0dbb2e1-6fcb-44fb-98e6-d78124f51497" autoIncrement="false" autoIncrementSequenceName="desenvolvem_codigo_comunidade_seq" defaultValue="" name="codigo_comunidade" nullable="0" physicalName="codigo_comunidade" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Código único e exclusivo que identifica as comunidades da igreja.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1613" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1612" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1614" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX164" populated="true" UUID="7f4375f9-1f47-4fee-be0a-187d4c608859" clustered="false" name="codigo_programa, codigo_comunidade" physicalName="codigo_programa,_codigo_comunidade" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC165" populated="true" UUID="d1f52972-9bcc-4518-afbd-6a106bd8e776" ascendingOrDescending="UNSPECIFIED" column-ref="COL162" name="codigo_programa" physicalName="codigo_programa" />
+     <index-column id="IDC166" populated="true" UUID="bc7f6bf5-b12e-4013-9b4e-154af52007ed" ascendingOrDescending="UNSPECIFIED" column-ref="COL163" name="codigo_comunidade" physicalName="codigo_comunidade" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL167" populated="true" UUID="040e54de-c9da-43c2-a673-9f6f9b6ca43a" deferrability="7" deleteRule="3" fk-table-ref="TAB32" fkCardinality="6" identifying="true" name="membros_programas_fk" physicalName="membros_programas_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP168" populated="true" UUID="4e758265-c4f1-4844-882a-d121cf3653cf" fk-column-ref="COL40" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL169" populated="true" UUID="a022d286-7889-4aa4-a02e-271c535d49cc" deferrability="7" deleteRule="3" fk-table-ref="TAB72" fkCardinality="6" identifying="false" name="membros_doacoes_fk" physicalName="membros_doacoes_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP170" populated="true" UUID="364084e6-bb1c-4bd3-ba07-133d2808a508" fk-column-ref="COL78" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL171" populated="true" UUID="0e507ab6-aa5e-4397-b6a9-9abb1ca005b4" deferrability="7" deleteRule="3" fk-table-ref="TAB155" fkCardinality="7" identifying="true" name="membros_colaboram_fk" physicalName="membros_colaboram_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP172" populated="true" UUID="249b5f95-25f7-4a0f-92da-841f2b936b6e" fk-column-ref="COL156" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL173" populated="true" UUID="70d19be3-0dd2-419f-805b-d4288fcaf06d" deferrability="7" deleteRule="3" fk-table-ref="TAB155" fkCardinality="7" identifying="true" name="membros_colaboram_fk1" physicalName="membros_colaboram_fk1" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP174" populated="true" UUID="807b64d7-9732-46ae-b738-5d6740301f84" fk-column-ref="COL157" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL175" populated="true" UUID="6dfb7be4-71a9-4e95-bff4-98efa534e89d" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="bairros_membros_fk" physicalName="bairros_membros_fk" pk-table-ref="TAB17" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP176" populated="true" UUID="22d6a523-ff91-48ea-8cd7-bfdea2b52408" fk-column-ref="COL7" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL18" />
+   </relationship>
+   <relationship id="REL177" populated="true" UUID="f0a58403-7075-439f-83a1-88327652b352" deferrability="7" deleteRule="3" fk-table-ref="TAB43" fkCardinality="7" identifying="false" name="bairros_comunidades_fk" physicalName="bairros_comunidades_fk" pk-table-ref="TAB17" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP178" populated="true" UUID="3b8bd2d1-1c7c-4ad7-ae0f-b6f2221d23dd" fk-column-ref="COL49" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL18" />
+   </relationship>
+   <relationship id="REL179" populated="true" UUID="f46cf17a-58cb-4c80-b80f-2843cb2ba200" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="cidades_membros_fk" physicalName="cidades_membros_fk" pk-table-ref="TAB22" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP180" populated="true" UUID="60fec945-99cb-43fc-ac3f-ef87d86e5c0a" fk-column-ref="COL8" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL23" />
+   </relationship>
+   <relationship id="REL181" populated="true" UUID="15d7bff4-746c-457d-849d-a6b7ab35dd28" deferrability="7" deleteRule="3" fk-table-ref="TAB43" fkCardinality="7" identifying="false" name="cidades_comunidades_fk" physicalName="cidades_comunidades_fk" pk-table-ref="TAB22" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP182" populated="true" UUID="bdb1fe5f-62fe-44ab-ad6d-70791fd0bb54" fk-column-ref="COL50" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL23" />
+   </relationship>
+   <relationship id="REL183" populated="true" UUID="31edaeaa-aa40-45e1-b6ea-0bc9547b0d64" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="uf_membros_fk" physicalName="uf_membros_fk" pk-table-ref="TAB27" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP184" populated="true" UUID="f8ef011c-bb6e-413d-88a0-95e43a46a966" fk-column-ref="COL9" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL28" />
+   </relationship>
+   <relationship id="REL185" populated="true" UUID="5c2c7ba9-7c2d-4ef7-b723-f8333112f5ec" deferrability="7" deleteRule="3" fk-table-ref="TAB43" fkCardinality="7" identifying="false" name="uf_comunidades_fk" physicalName="uf_comunidades_fk" pk-table-ref="TAB27" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP186" populated="true" UUID="4a26ee63-c353-4dc5-90e6-c010717d90b0" fk-column-ref="COL51" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL28" />
+   </relationship>
+   <relationship id="REL187" populated="true" UUID="77a0fc7c-0d24-4203-8264-64641166625f" deferrability="7" deleteRule="3" fk-table-ref="TAB113" fkCardinality="7" identifying="true" name="programas_imagem_programas_fk" physicalName="programas_imagem_programas_fk" pk-table-ref="TAB32" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP188" populated="true" UUID="a19916b6-2993-4cd7-a939-8ca56a36b9ff" fk-column-ref="COL114" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL33" />
+   </relationship>
+   <relationship id="REL189" populated="true" UUID="c82d3ca0-f253-4c2f-b747-886d9165f8f7" deferrability="7" deleteRule="3" fk-table-ref="TAB161" fkCardinality="7" identifying="true" name="programas_desenvolvem_fk" physicalName="programas_desenvolvem_fk" pk-table-ref="TAB32" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP190" populated="true" UUID="b03f6911-eedc-4893-bc6f-833d3e71f795" fk-column-ref="COL162" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL33" />
+   </relationship>
+   <relationship id="REL191" populated="true" UUID="f5985195-f544-4355-95cb-c247bdc4f9b1" deferrability="7" deleteRule="3" fk-table-ref="TAB62" fkCardinality="7" identifying="true" name="comunidades_comunidades_telefones_fk" physicalName="comunidades_comunidades_telefones_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP192" populated="true" UUID="4b47aa95-c498-40c8-af6a-a0791aab3b64" fk-column-ref="COL63" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
+   </relationship>
+   <relationship id="REL193" populated="true" UUID="9c316473-bddc-46a7-b435-cff67398d2a5" deferrability="7" deleteRule="3" fk-table-ref="TAB67" fkCardinality="7" identifying="true" name="comunidades_comunidades_emails_fk" physicalName="comunidades_comunidades_emails_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP194" populated="true" UUID="771fdad6-5744-4f2b-80b4-1512aeb23246" fk-column-ref="COL68" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
+   </relationship>
+   <relationship id="REL195" populated="true" UUID="c54658fb-2706-4053-aa55-4b0309caeec2" deferrability="7" deleteRule="3" fk-table-ref="TAB107" fkCardinality="7" identifying="true" name="comunidades_cadastram_fk" physicalName="comunidades_cadastram_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP196" populated="true" UUID="a85c095e-5d9d-49c2-8bb1-5b790ed8793d" fk-column-ref="COL108" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
+   </relationship>
+   <relationship id="REL197" populated="true" UUID="d5e7f1ce-239b-4134-9919-1c51c0db7bda" deferrability="7" deleteRule="3" fk-table-ref="TAB99" fkCardinality="7" identifying="false" name="comunidades_atendidos_fk" physicalName="comunidades_atendidos_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP198" populated="true" UUID="c10d4cb6-6a26-4122-a495-50f8950c6026" fk-column-ref="COL101" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
+   </relationship>
+   <relationship id="REL199" populated="true" UUID="06278b99-2431-48c2-a79f-ef285fb77800" deferrability="7" deleteRule="3" fk-table-ref="TAB119" fkCardinality="7" identifying="true" name="comunidades_imagem_comunidades_fk" physicalName="comunidades_imagem_comunidades_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP200" populated="true" UUID="e0367059-b179-468d-813e-dfff00254fc3" fk-column-ref="COL120" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
+   </relationship>
+   <relationship id="REL201" populated="true" UUID="b386f474-69d7-426b-bbf2-4fa74953afcc" deferrability="7" deleteRule="3" fk-table-ref="TAB161" fkCardinality="7" identifying="true" name="comunidades_desenvolvem_fk" physicalName="comunidades_desenvolvem_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP202" populated="true" UUID="29741c9a-1d71-4f87-9eb0-93bb9a539e42" fk-column-ref="COL163" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
+   </relationship>
+   <relationship id="REL203" populated="true" UUID="0e32c59c-cf38-4b95-ae29-5296137d04e1" deferrability="7" deleteRule="3" fk-table-ref="TAB32" fkCardinality="7" identifying="false" name="comunidades_programas_fk" physicalName="comunidades_programas_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP204" populated="true" UUID="7fa5c442-a5df-44c1-afd0-58e527b2ca89" fk-column-ref="COL34" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
+   </relationship>
+   <relationship id="REL205" populated="true" UUID="4f99ce74-b498-4cc5-84a5-b1066d7f0819" deferrability="7" deleteRule="3" fk-table-ref="TAB113" fkCardinality="7" identifying="true" name="imagens_imagem_programas_fk" physicalName="imagens_imagem_programas_fk" pk-table-ref="TAB55" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP206" populated="true" UUID="bf285e96-dfb9-48bd-be15-5a74658d0575" fk-column-ref="COL115" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL56" />
+   </relationship>
+   <relationship id="REL207" populated="true" UUID="e7a6ec5e-7f15-4907-9382-cc591e9eebf7" deferrability="7" deleteRule="3" fk-table-ref="TAB119" fkCardinality="7" identifying="true" name="imagens_imagem_comunidades_fk" physicalName="imagens_imagem_comunidades_fk" pk-table-ref="TAB55" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP208" populated="true" UUID="7afc05b6-5054-423b-82c5-7aa4f8db3e1b" fk-column-ref="COL121" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL56" />
+   </relationship>
+   <relationship id="REL209" populated="true" UUID="ac280036-db81-405a-8b27-256f47a6c2da" deferrability="7" deleteRule="3" fk-table-ref="TAB125" fkCardinality="7" identifying="true" name="imagens_imagem_atendidos_fk" physicalName="imagens_imagem_atendidos_fk" pk-table-ref="TAB55" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP210" populated="true" UUID="06f3ad75-643f-4b9d-ae41-cdd335d6edaa" fk-column-ref="COL127" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL56" />
+   </relationship>
+   <relationship id="REL211" populated="true" UUID="c99ca1a2-1183-41e7-a423-3c57ab63c596" deferrability="7" deleteRule="3" fk-table-ref="TAB147" fkCardinality="7" identifying="true" name="imagens_registram_fk" physicalName="imagens_registram_fk" pk-table-ref="TAB55" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP212" populated="true" UUID="284109a6-2e66-456e-a061-e11fbeae5e1d" fk-column-ref="COL148" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL56" />
+   </relationship>
+   <relationship id="REL213" populated="true" UUID="5ed4d478-a404-4b67-85d9-13db586bcd51" deferrability="7" deleteRule="3" fk-table-ref="TAB81" fkCardinality="3" identifying="true" name="doacoes_monetaria_fk" physicalName="doacoes_monetaria_fk" pk-table-ref="TAB72" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP214" populated="true" UUID="cb28676c-f8ef-4cb6-a503-253129da2e4b" fk-column-ref="COL82" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL73" />
+   </relationship>
+   <relationship id="REL215" populated="true" UUID="7a4b28d0-a47d-4e61-a9cd-947e5963fea8" deferrability="7" deleteRule="3" fk-table-ref="TAB87" fkCardinality="3" identifying="true" name="doacoes_bens_fk" physicalName="doacoes_bens_fk" pk-table-ref="TAB72" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP216" populated="true" UUID="9a608813-71aa-4f62-977d-0baa384f58a8" fk-column-ref="COL88" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL73" />
+   </relationship>
+   <relationship id="REL217" populated="true" UUID="7eb36915-013e-4522-89c6-2e62c4924889" deferrability="7" deleteRule="3" fk-table-ref="TAB93" fkCardinality="3" identifying="true" name="doacoes_trabalhos_fk" physicalName="doacoes_trabalhos_fk" pk-table-ref="TAB72" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP218" populated="true" UUID="e938420e-736f-4a97-9d0b-c8fa1c8b39ea" fk-column-ref="COL94" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL73" />
+   </relationship>
+   <relationship id="REL219" populated="true" UUID="2d6274cf-4f60-43b3-8b98-2d58b18ded48" deferrability="7" deleteRule="3" fk-table-ref="TAB137" fkCardinality="7" identifying="true" name="doacoes_destinacoes_fk" physicalName="doacoes_destinacoes_fk" pk-table-ref="TAB72" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP220" populated="true" UUID="71dc7fd5-3843-4818-aca6-2a6eeff32048" fk-column-ref="COL138" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL73" />
+   </relationship>
+   <relationship id="REL221" populated="true" UUID="4a02d6a0-3247-4dfc-97be-65f8b4bdb4b8" deferrability="7" deleteRule="3" fk-table-ref="TAB131" fkCardinality="7" identifying="true" name="trabalhos_disponibilidade_fk" physicalName="trabalhos_disponibilidade_fk" pk-table-ref="TAB93" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP222" populated="true" UUID="70df9aff-cbb1-4430-86a9-29f20e495a1c" fk-column-ref="COL132" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL94" />
+   </relationship>
+   <relationship id="REL223" populated="true" UUID="589cd2b8-66da-46aa-b9ad-933d02ab3dd5" deferrability="7" deleteRule="3" fk-table-ref="TAB107" fkCardinality="7" identifying="true" name="atendidos_cadastram_fk" physicalName="atendidos_cadastram_fk" pk-table-ref="TAB99" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP224" populated="true" UUID="66d83f95-dd6c-476c-b8f1-953b10c05ed7" fk-column-ref="COL109" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL100" />
+   </relationship>
+   <relationship id="REL225" populated="true" UUID="83fa1602-5abb-45a8-954c-b80c630884f4" deferrability="7" deleteRule="3" fk-table-ref="TAB125" fkCardinality="7" identifying="true" name="atendidos_imagem_atendidos_fk" physicalName="atendidos_imagem_atendidos_fk" pk-table-ref="TAB99" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP226" populated="true" UUID="8c4c6d78-674b-474a-a947-db4740d3d4fb" fk-column-ref="COL126" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL100" />
+   </relationship>
+   <relationship id="REL227" populated="true" UUID="f3cf5333-f078-4e44-be90-bb5cd0dece75" deferrability="7" deleteRule="3" fk-table-ref="TAB137" fkCardinality="7" identifying="true" name="atendidos_destinacoes_fk" physicalName="atendidos_destinacoes_fk" pk-table-ref="TAB99" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP228" populated="true" UUID="1141e371-c39e-466c-89b7-ece19da78e15" fk-column-ref="COL139" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL100" />
+   </relationship>
+   <relationship id="REL229" populated="true" UUID="70668452-722c-413e-8e5d-688c44b7e749" deferrability="7" deleteRule="3" fk-table-ref="TAB147" fkCardinality="7" identifying="true" name="destinacoes_registram_fk" physicalName="destinacoes_registram_fk" pk-table-ref="TAB137" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP230" populated="true" UUID="f5ddac73-557e-4b8f-9853-775f5ce1fa23" fk-column-ref="COL149" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL138" />
+    <column-mapping id="CMP231" populated="true" UUID="77bc76c4-7a7b-456c-9e0d-09d8afca5b03" fk-column-ref="COL150" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL139" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.1341812400635929" viewportX="241" viewportY="323" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB1" x="179" y="128" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB17" x="537" y="133" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB22" x="586" y="202" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB27" x="588" y="282" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB32" x="200" y="382" bgColor="0xe8cfdb" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB43" x="874" y="94" bgColor="0xc8dccc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB55" x="472" y="546" bgColor="0xeec994" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB62" x="1013" y="304" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB67" x="920" y="403" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB72" x="381" y="799" bgColor="0xe4e4b8" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB81" x="98" y="586" bgColor="0xc7d0df" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB87" x="67" y="680" bgColor="0xc7d0df" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB93" x="37" y="771" bgColor="0xc7d0df" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB99" x="1644" y="87" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB107" x="1279" y="154" bgColor="0xc8b7ea" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB113" x="489" y="438" bgColor="0xc8b7ea" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB119" x="745" y="551" bgColor="0xc8b7ea" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB125" x="749" y="633" bgColor="0xc8b7ea" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB131" x="20" y="883" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB137" x="749" y="743" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB147" x="416" y="677" bgColor="0xb9bbf6" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB155" x="28" y="20" bgColor="0xb9bbf6" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB161" x="544" y="362" bgColor="0xb9bbf6" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL175" pkConnection="0.14035087719298245" fkConnection="0.4265402843601896" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL179" pkConnection="0.14035087719298245" fkConnection="0.6208530805687204" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL183" pkConnection="0.12280701754385964" fkConnection="0.6966824644549763" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL167" pkConnection="0.12222222222222222" fkConnection="0.5836909871244635" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL177" pkConnection="0.12280701754385964" fkConnection="0.6774193548387096" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL181" pkConnection="0.19298245614035087" fkConnection="0.7677419354838709" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL185" pkConnection="0.14035087719298245" fkConnection="0.8774193548387097" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL191" pkConnection="0.7557251908396947" fkConnection="0.06995884773662552" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL193" pkConnection="0.4618320610687023" fkConnection="0.0411522633744856" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL169" pkConnection="0.018726591760299626" fkConnection="0.0611353711790393" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL213" pkConnection="0.19469026548672566" fkConnection="0.30985915492957744" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL215" pkConnection="0.5309734513274337" fkConnection="0.4225352112676056" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL217" pkConnection="0.7433628318584071" fkConnection="0.14084507042253522" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL195" pkConnection="0.16129032258064516" fkConnection="0.43859649122807015" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL223" pkConnection="0.41414141414141414" fkConnection="0.7192982456140351" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL197" pkConnection="0.06451612903225806" fkConnection="0.17543859649122806" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL187" pkConnection="0.15602836879432624" fkConnection="0.32558139534883723" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL205" pkConnection="0.2894736842105263" fkConnection="0.6291666666666667" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL199" pkConnection="0.12222222222222222" fkConnection="0.540650406504065" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL207" pkConnection="0.3058823529411765" fkConnection="0.7894736842105263" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL225" pkConnection="0.04081632653061224" fkConnection="0.49122807017543857" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="20"/>
+  <table-link relationship-ref="REL209" pkConnection="1.0" fkConnection="0.47368421052631576" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL221" pkConnection="0.7488789237668162" fkConnection="0.3452914798206278" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL219" pkConnection="0.19469026548672566" fkConnection="0.38596491228070173" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL227" pkConnection="0.2612244897959184" fkConnection="0.36283185840707965" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="20"/>
+  <table-link relationship-ref="REL211" pkConnection="0.573394495412844" fkConnection="0.45982142857142855" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL229" pkConnection="0.18584070796460178" fkConnection="0.8823529411764706" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL171" pkConnection="0.0449438202247191" fkConnection="0.6060606060606061" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL173" pkConnection="0.3895131086142322" fkConnection="0.8621908127208481" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL189" pkConnection="0.03546099290780142" fkConnection="0.3684210526315789" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL201" pkConnection="0.05185185185185185" fkConnection="0.5087719298245614" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="20"/>
+  <table-link relationship-ref="REL203" pkConnection="0.8629629629629629" fkConnection="0.9361702127659575" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="20"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
