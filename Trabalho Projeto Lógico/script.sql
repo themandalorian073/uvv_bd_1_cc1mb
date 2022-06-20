@@ -46,7 +46,7 @@ set search_path elmasri, "$user", public;
 CREATE TABLE imagens (
                 codigo_imagem INTEGER NOT NULL,
                 nome VARCHAR(150) NOT NULL,
-                descricao LONGVARCHAR NOT NULL,
+                descricao TEXT NOT NULL,
                 data_registro DATE NOT NULL,
                 CONSTRAINT pk_imagens PRIMARY KEY (codigo_imagem)
 );
@@ -76,11 +76,13 @@ COMMENT ON COLUMN uf.nome IS 'Nome padronizado da unidade da federação.';
 CREATE TABLE cidades (
                 codigo INTEGER NOT NULL,
                 nome VARCHAR(100) NOT NULL,
+                uf CHAR(2) NOT NULL,
                 CONSTRAINT pk_cidades PRIMARY KEY (codigo)
 );
 COMMENT ON TABLE cidades IS 'Tabela que armaena as cidades do estado.';
 COMMENT ON COLUMN cidades.codigo IS 'PK da tabela, e o código único e exclusivo de cada cidade.';
 COMMENT ON COLUMN cidades.nome IS 'Nome padronizado das cidades.';
+COMMENT ON COLUMN cidades.uf IS 'FK para a tabela uf.';
 
 --
 
@@ -89,11 +91,13 @@ COMMENT ON COLUMN cidades.nome IS 'Nome padronizado das cidades.';
 CREATE TABLE bairros (
                 codigo INTEGER NOT NULL,
                 nome VARCHAR(100) NOT NULL,
+                codigo_cidade INTEGER NOT NULL,
                 CONSTRAINT pk_bairros PRIMARY KEY (codigo)
 );
 COMMENT ON TABLE bairros IS 'Tabela que armazena os bairros das cidades.';
 COMMENT ON COLUMN bairros.codigo IS 'PK inventada para esta tabela, e é o código único e exclusivo de identificação de cada bairro.';
 COMMENT ON COLUMN bairros.nome IS 'Nomes dos bairros.';
+COMMENT ON COLUMN bairros.codigo_cidade IS 'FK para a tabela cidades.';
 
 --
 
@@ -129,7 +133,7 @@ COMMENT ON COLUMN comunidades.endereco_cep IS 'CEP dos endereços das comunidade
 CREATE TABLE imagem_comunidades (
                 codigo_comunidade INTEGER NOT NULL,
                 codigo_imagem INTEGER NOT NULL,
-                CONSTRAINT codigo_comunidade,_codigo_imagem PRIMARY KEY (codigo_comunidade, codigo_imagem)
+                CONSTRAINT codigo_comunidade__codigo_imagem PRIMARY KEY (codigo_comunidade, codigo_imagem)
 );
 COMMENT ON TABLE imagem_comunidades IS 'Tabela que guarda dados para as tabelas imagens e comunidades.';
 COMMENT ON COLUMN imagem_comunidades.codigo_comunidade IS 'PFK para a tabela comunidades.';
@@ -160,7 +164,7 @@ COMMENT ON COLUMN atendidos.cnpj IS 'CNPJ dos atendidos das comunidades da igrej
 CREATE TABLE imagem_atendidos (
                 codigo_atendidos INTEGER NOT NULL,
                 codigo_imagem INTEGER NOT NULL,
-                CONSTRAINT codigo_atendidos,_codigo_imagem PRIMARY KEY (codigo_atendidos, codigo_imagem)
+                CONSTRAINT codigo_atendidos__codigo_imagem PRIMARY KEY (codigo_atendidos, codigo_imagem)
 );
 COMMENT ON TABLE imagem_atendidos IS 'Tabela que guarda dados para as tabelas imagens e atendidos.';
 COMMENT ON COLUMN imagem_atendidos.codigo_atendidos IS 'PFK para a tabela atendidos.';
@@ -173,7 +177,7 @@ COMMENT ON COLUMN imagem_atendidos.codigo_imagem IS 'PFK para a tabela imagens.'
 CREATE TABLE cadastram (
                 codigo_comunidade INTEGER NOT NULL,
                 codigo_atendidos INTEGER NOT NULL,
-                CONSTRAINT codigo_comunidade,_codigo_atendidos PRIMARY KEY (codigo_comunidade, codigo_atendidos)
+                CONSTRAINT codigo_comunidade__codigo_atendidos PRIMARY KEY (codigo_comunidade, codigo_atendidos)
 );
 COMMENT ON TABLE cadastram IS 'Tabela que guarda dados das tabelas comunidades e atendidos';
 COMMENT ON COLUMN cadastram.codigo_comunidade IS 'Código único e exclusivo que identifica as comunidades da igreja.';
@@ -247,7 +251,7 @@ COMMENT ON COLUMN membros.estado_civil IS 'O estado civil dos membros da igreja.
 CREATE TABLE colaboram (
                 codigo_membro INTEGER NOT NULL,
                 membros_codigo_membro INTEGER NOT NULL,
-                CONSTRAINT codigo_membro,_membros_codigo_membro PRIMARY KEY (codigo_membro, membros_codigo_membro)
+                CONSTRAINT codigo_membro__membros_codigo_membro PRIMARY KEY (codigo_membro, membros_codigo_membro)
 );
 COMMENT ON TABLE colaboram IS 'Tabela de autorelacionamento e que guarda dados para a tabela membros.';
 COMMENT ON COLUMN colaboram.codigo_membro IS 'PFK para a tabela membros, autorelacionamento.';
@@ -277,15 +281,15 @@ COMMENT ON COLUMN doacoes.codigo_membro IS 'FK para a tabela membros.';
 --
 
 \echo
-\echo Criando a tabela "destinacoes" e objetos relacionados:
+\echo Criando a tabela "destonacoes" e objetos relacionados:
 CREATE TABLE destinacoes (
                 codigo_doacao INTEGER NOT NULL,
                 codigo_atendidos INTEGER NOT NULL,
                 nome_destinacao VARCHAR NOT NULL,
                 data DATE NOT NULL,
-                obcervacoes LONGVARCHAR,
+                obcervacoes TEXT,
                 recebedor VARCHAR(150) NOT NULL,
-                CONSTRAINT codigo_doacao,_codigo_atendidos PRIMARY KEY (codigo_doacao, codigo_atendidos)
+                CONSTRAINT codigo_doacao__codigo_atendidos PRIMARY KEY (codigo_doacao, codigo_atendidos)
 );
 COMMENT ON TABLE destinacoes IS 'Guarda dados para as tabelas doacoes e atendidos, também traz informações a respeito das destinações.';
 COMMENT ON COLUMN destinacoes.codigo_doacao IS 'Código único e exclusivo que identifica as doações da igreja.';
@@ -303,7 +307,7 @@ CREATE TABLE registram (
                 codigo_imagem INTEGER NOT NULL,
                 codigo_doacao INTEGER NOT NULL,
                 codigo_atendidos INTEGER NOT NULL,
-                CONSTRAINT codigo_imagem,_codigo_doacao,_codigo_atendidos PRIMARY KEY (codigo_imagem, codigo_doacao, codigo_atendidos)
+                CONSTRAINT codigo_imagem__codigo_doacao__codigo_atendidos PRIMARY KEY (codigo_imagem, codigo_doacao, codigo_atendidos)
 );
 COMMENT ON TABLE registram IS 'Tabela que guarda dados das tabelas imagens e destinacoes.';
 COMMENT ON COLUMN registram.codigo_imagem IS 'Cóodigo da imagem das destinações da igreja.';
@@ -357,10 +361,10 @@ COMMENT ON COLUMN bens.tipo IS 'Tipo dos bens que foram doados para a igreja';
 --
 
 \echo
-\echo Criando a tabela "monetaria" e objetos relacionados:
+\echo Criando a tabela "menotaria" e objetos relacionados:
 CREATE TABLE monetaria (
                 codigo_doacao INTEGER NOT NULL,
-                valor DECIMAL(9,2) NOT NULL,
+                valor NUMERIC(9,2) NOT NULL,
                 tipo_moeda VARCHAR(100) NOT NULL,
                 CONSTRAINT pk_monetaria PRIMARY KEY (codigo_doacao)
 );
@@ -377,8 +381,8 @@ CREATE TABLE programas (
                 codigo_programa INTEGER NOT NULL,
                 codigo_comunidade INTEGER NOT NULL,
                 nome VARCHAR(100) NOT NULL,
-                descricao LONGVARCHAR(1000) NOT NULL,
-                objetivos LONGVARCHAR(1000) NOT NULL,
+                descricao TEXT(1000) NOT NULL,
+                objetivos TEXT(1000) NOT NULL,
                 data_de_inicio DATE NOT NULL,
                 data_final_prevista DATE,
                 codigo_membro INTEGER NOT NULL,
@@ -401,7 +405,7 @@ COMMENT ON COLUMN programas.codigo_membro IS 'FK para a tabela mebros que identi
 CREATE TABLE desenvolvem (
                 codigo_programa INTEGER NOT NULL,
                 codigo_comunidade INTEGER NOT NULL,
-                CONSTRAINT codigo_programa,_codigo_comunidade PRIMARY KEY (codigo_programa, codigo_comunidade)
+                CONSTRAINT codigo_programa__codigo_comunidade PRIMARY KEY (codigo_programa, codigo_comunidade)
 );
 COMMENT ON TABLE desenvolvem IS 'Tabela que guarda dados para as tabelas programas e comunidades.';
 COMMENT ON COLUMN desenvolvem.codigo_programa IS 'Código único e exclusivo que identifica os programas da igreja.';
@@ -414,7 +418,7 @@ COMMENT ON COLUMN desenvolvem.codigo_comunidade IS 'Código único e exclusivo q
 CREATE TABLE imagem_programas (
                 codigo_programa INTEGER NOT NULL,
                 codigo_imagem INTEGER NOT NULL,
-                CONSTRAINT codigo_programa,_codigo_imagem PRIMARY KEY (codigo_programa, codigo_imagem)
+                CONSTRAINT codigo_programa__codigo_imagem PRIMARY KEY (codigo_programa, codigo_imagem)
 );
 COMMENT ON TABLE imagem_programas IS 'Tabela que guarda dados para as tabelas programas e imagens.';
 COMMENT ON COLUMN imagem_programas.codigo_programa IS 'PFK para a tabela programas.';
@@ -445,6 +449,10 @@ ALTER TABLE comunidades ADD CONSTRAINT uf_comunidades_fk
 FOREIGN KEY (endereco_uf)
 REFERENCES uf (sigla);
 
+ALTER TABLE cidades ADD CONSTRAINT uf_cidades_fk
+FOREIGN KEY (uf)
+REFERENCES uf (sigla);
+
 ALTER TABLE membros ADD CONSTRAINT cidades_membros_fk
 FOREIGN KEY (endereco_codigo_cidade)
 REFERENCES cidades (codigo);
@@ -453,13 +461,13 @@ ALTER TABLE comunidades ADD CONSTRAINT cidades_comunidades_fk
 FOREIGN KEY (endereco_codigo_cidade)
 REFERENCES cidades (codigo);
 
+ALTER TABLE bairros ADD CONSTRAINT cidades_bairros_fk
+FOREIGN KEY (codigo)
+REFERENCES cidades (codigo);
+
 ALTER TABLE membros ADD CONSTRAINT bairros_membros_fk
 FOREIGN KEY (endereco_codigo_bairro)
 REFERENCES bairros (codigo);
-
-ALTER TABLE funcionario ADD CONSTRAINT ck_func_sexo
-CHECK (sexo IN ('M', 'F'));
-
 
 ALTER TABLE comunidades ADD CONSTRAINT bairros_comunidades_fk
 FOREIGN KEY (endereco_codigo_bairro)
